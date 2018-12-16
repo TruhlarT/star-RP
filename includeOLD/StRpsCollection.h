@@ -20,15 +20,14 @@
  * Initial Revision
  *
  **************************************************************************/
-#ifndef StRpsCollection_hh
-#define StRpsCollection_hh
+#ifndef StRpsCollection_h
+#define StRpsCollection_h
 
 #include "TObject.h" // "StObject.h"
 #include "TClonesArray.h" // "StContainers.h"
 #include "StRpsRomanPot.h"
 #include "StRpsTrackPoint.h"
 #include "StRpsTrack.h"
-#include <vector> // added
 
 class StRpsCollection : public TObject {
 public:
@@ -40,14 +39,14 @@ public:
     const StRpsRomanPot* romanPot(unsigned int) const;
     StRpsRomanPot* romanPot(unsigned int);
     
-    vector<StRpsCluster*> clusters() const; // StPtrVecRpsCluster clusters() const;
-    vector<StRpsTrackPoint*> trackPoints() const; // StPtrVecRpsTrackPoint trackPoints() const;
-    vector<StRpsTrack*> tracks() const; // StPtrVecRpsTrack tracks() const;
+    StPtrVecRpsCluster clusters() const;
+    StPtrVecRpsTrackPoint trackPoints() const;
+    StPtrVecRpsTrack tracks() const;
     unsigned char siliconBunch() const;
     
     void setSiliconBunch(unsigned char);
-    void addTrackPoint(StRpsTrackPoint*); // void addTrackPoint(const StRpsTrackPoint*);
-    void addTrack(StRpsTrack*); // void addTrack(const StRpsTrack*);
+    void addTrackPoint(const StRpsTrackPoint*);
+    void addTrack(const StRpsTrack*);
     
     enum {mNumberOfRomanPots = 8};
     
@@ -55,21 +54,19 @@ private:
     StRpsRomanPot mRomanPots[mNumberOfRomanPots];
     UChar_t mSiliconBunch;
     
-    vector<StRpsTrackPoint*> 	mTrackPoints; // StSPtrVecRpsTrackPoint mTrackPoints;
-	vector<StRpsTrack*> 		mTracks; // StSPtrVecRpsTrack mTracks;
+    StSPtrVecRpsTrackPoint mTrackPoints;
+    StSPtrVecRpsTrack mTracks;
     
-
     ClassDef(StRpsCollection, 3)
 };
 
-// inline void StRpsCollection::addTrackPoint(const StRpsTrackPoint *trackPoint) {
-inline void StRpsCollection::addTrackPoint(StRpsTrackPoint *trackPoint) {
+
+inline void StRpsCollection::addTrackPoint(const StRpsTrackPoint *trackPoint) {
     mTrackPoints.push_back(trackPoint);
 }
-
-// inline void StRpsCollection::addTrack(const StRpsTrack *track) {
-inline void StRpsCollection::addTrack(StRpsTrack *track) {
+inline void StRpsCollection::addTrack(const StRpsTrack *track) {
     mTracks.push_back(track);
 }
 
 #endif
+

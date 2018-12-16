@@ -19,8 +19,8 @@
  * Initial Revision.
  *
  **************************************************************************/
-#ifndef StRpsTrackPoint_hh
-#define StRpsTrackPoint_hh
+#ifndef StRpsTrackPoint_h
+#define StRpsTrackPoint_h
 
 #include "TObject.h"  // "StObject.h"
 #include "TVector3.h" // "StThreeVectorF.h"

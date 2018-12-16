@@ -2,9 +2,10 @@
 
 SRC="src"
 INC="include"
-DEST="StRoot/StUPCFilterMaker"
+DEST="StRoot/StRPData"
 
-srclist=( StMuRpsCollection StMuRpsTrack StMuRpsTrackPoint StRpsCluster StRpsCollection StRpsPlane StRpsRomanPot StRpsTrack StRpsTrackPoint)
+srclist=( StMuRpsCollection StMuRpsTrack StMuRpsTrackPoint StRpsCollection StRpsRomanPot StRpsPlane StRpsCluster StRpsTrack StRpsTrackPoint)
+
 
 mkdir -p $DEST
 

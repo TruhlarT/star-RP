@@ -1,5 +1,5 @@
-#ifndef __StMuRpsTrack_hh__
-#define __StMuRpsTrack_hh__
+#ifndef StMuRpsTrack_h
+#define StMuRpsTrack_h
 
 #include "TObject.h"
 #include "TVector3.h"
@@ -13,13 +13,13 @@ class StRpsTrack;
 
 class StMuRpsTrack : public TObject {
 public:
-	enum StMuRpsTrackType { rpsLocal, rpsGlobal, rpsUndefined };
+        enum StMuRpsTrackType { rpsLocal, rpsGlobal, rpsUndefined };
     enum StMuRpsAngles { rpsAngleThetaX, rpsAngleThetaY, rpsAngleTheta, mNumberOfAngleTypes };
     enum {mNumberOfStationsInBranch = 2};
 
 protected:
     TRef mTrackPoints[mNumberOfStationsInBranch];   // reference to track points (local tracks)
-    TVector3 mP;								    // three-vector with reconstructed track momentum
+    TVector3 mP;                                                                    // three-vector with reconstructed track momentum
     Int_t          mBranch;                         // detectors branch, EU=0, ED=1, WU=2, WD=3 
     StMuRpsTrackType mType;                         // type of the track
     

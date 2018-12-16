@@ -7,7 +7,7 @@ StMuRpsTrackPoint::StMuRpsTrackPoint() {
     mRpId = -1;
     for (unsigned int i=0; i<StRpsTrackPoint::mNumberOfPlanesInRp; ++i) mClusterId[i] = -1;
     for (unsigned int i=0; i<StRpsTrackPoint::mNumberOfPmtsInRp; ++i) mTime[i] = -1;
-    mQuality = rpsNotSet; // mQuality = StMuRpsTrackPoint::StMuRpsTrackPointQuality::rpsNotSet
+    mQuality = StMuRpsTrackPoint::StMuRpsTrackPointQuality::rpsNotSet;
 }
 
 StMuRpsTrackPoint::StMuRpsTrackPoint(const StMuRpsTrackPoint& trackPoint) {

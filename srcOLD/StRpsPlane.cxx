@@ -74,10 +74,10 @@ StRpsPlane::cluster(unsigned int i)
 unsigned int  
 StRpsPlane::romanPotId() const { return mRomanPotId; }
 
-const vector<StRpsCluster*>& 
+const StSPtrVecRpsCluster& 
 StRpsPlane::clusters() const { return mClusters; }
 
-vector<StRpsCluster*>&       
+StSPtrVecRpsCluster&       
 StRpsPlane::clusters() { return mClusters; }
 
 void 

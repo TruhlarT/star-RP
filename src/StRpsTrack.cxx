@@ -62,13 +62,13 @@ unsigned int StRpsTrack::planesUsed() const {
 double StRpsTrack::thetaRp(unsigned int coordinate) const {
     if(coordinate>rpsAngleTheta) return 0.0;
     if(mType==rpsLocal) return theta(coordinate);
-    TVector3 deltaVector = mTrackPoints[1]->positionVec() - mTrackPoints[0]->positionVec();
+    StThreeVectorF deltaVector = mTrackPoints[1]->positionVec() - mTrackPoints[0]->positionVec();
     return atan((coordinate<rpsAngleTheta ? deltaVector[coordinate] : deltaVector.perp())/abs(deltaVector.z()));
 }
 
 double StRpsTrack::phiRp() const{
     if(mType==rpsLocal) return phi();
-    TVector3 deltaVector = mTrackPoints[1]->positionVec() - mTrackPoints[0]->positionVec();
+    StThreeVectorF deltaVector = mTrackPoints[1]->positionVec() - mTrackPoints[0]->positionVec();
     return deltaVector.phi();
 }
 

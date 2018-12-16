@@ -18,11 +18,11 @@
  * Initial Revision
  *
  **************************************************************************/
-#ifndef StRpsCluster_hh
-#define StRpsCluster_hh
+#ifndef StRpsCluster_h
+#define StRpsCluster_h
 
-#include <iostream> // #include <Stiostream.h>
-#include "TObject.h" // #include "StObject.h"
+#include <iostream>
+#include "TObject.h"
 
 class StRpsPlane;
 

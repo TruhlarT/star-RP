@@ -1,10 +1,9 @@
-#ifndef __StMuRpsTrackPoint_hh__
-#define __StMuRpsTrackPoint_hh__
+#ifndef StMuRpsTrackPoint_h
+#define StMuRpsTrackPoint_h
 
 #include "TObject.h"
 #include "TVector3.h"
-
-// #include "StEvent/StRpsTrackPoint.h"
+#include "StRpsTrackPoint.h"
 
 class StRpsTrackPoint;
 
@@ -15,25 +14,25 @@ public:
     enum {mNumberOfPmtsInRp = 2, mNumberOfPlanesInRp = 4};
 protected:
 
-	// position (x, y, z)
-	TVector3	mPosition;
-	// 	RP# (e.g. E1U=0)
-	Int_t		mRpId;
-	// IDs of clusters in RpsCollection
-	Int_t 		mClusterId[mNumberOfPlanesInRp];
-	// Track Point Quality
+        // position (x, y, z)
+        TVector3        mPosition;
+        //      RP# (e.g. E1U=0)
+        Int_t           mRpId;
+        // IDs of clusters in RpsCollection
+        Int_t           mClusterId[mNumberOfPlanesInRp];
+        // Track Point Quality
     StMuRpsTrackPointQuality mQuality;
     // time
     double mTime[mNumberOfPmtsInRp];
 
 public:
-	StMuRpsTrackPoint();
+        StMuRpsTrackPoint();
     StMuRpsTrackPoint(const StMuRpsTrackPoint&);
-	~StMuRpsTrackPoint();
+        ~StMuRpsTrackPoint();
 
     StMuRpsTrackPoint& operator=(const StMuRpsTrackPoint&);
 
-	TVector3 positionVec() const;
+        TVector3 positionVec() const;
     Int_t rpId() const;
     Int_t clusterId(unsigned int planeId ) const;
     double time(unsigned int) const;
@@ -54,7 +53,7 @@ public:
 
 private:
 
-	ClassDef(StMuRpsTrackPoint,1)
+        ClassDef(StMuRpsTrackPoint,1)
 };
 
 inline TVector3 StMuRpsTrackPoint::positionVec() const { return mPosition; }

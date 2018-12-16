@@ -22,7 +22,6 @@
  **************************************************************************/
 #include "StRpsCollection.h"
 #include "StRpsPlane.h"
-#include <vector> // added
 
 static const char rcsid[] = "$Id: StRpsCollection.cxx,v 2.3 2015/10/02 19:50:50 ullrich Exp $";
 
@@ -69,10 +68,10 @@ StRpsCollection::romanPot(unsigned int i)
         return 0;
 }
 
-vector<StRpsCluster*>
+StPtrVecRpsCluster
 StRpsCollection::clusters() const
 {
-    vector<StRpsCluster*> vec;
+    StPtrVecRpsCluster vec;
     for (unsigned int i=0; i<mNumberOfRomanPots; i++) {
         const StRpsRomanPot *seq = &mRomanPots[i];
         for (unsigned int j=0; j<seq->numberOfPlanes(); j++) {
@@ -84,16 +83,16 @@ StRpsCollection::clusters() const
     return vec;
 }
 
-vector<StRpsTrackPoint*> StRpsCollection::trackPoints() const {
-    vector<StRpsTrackPoint*> trackPointsVec;
+StPtrVecRpsTrackPoint StRpsCollection::trackPoints() const {
+    StPtrVecRpsTrackPoint trackPointsVec;
     for (unsigned int i=0; i<mTrackPoints.size(); ++i) {
         trackPointsVec.push_back( mTrackPoints[i] );
     }
     return trackPointsVec;
 }
 
-vector<StRpsTrack*> StRpsCollection::tracks() const {
-    vector<StRpsTrack*> tracksVec;
+StPtrVecRpsTrack StRpsCollection::tracks() const {
+    StPtrVecRpsTrack tracksVec;
     for(unsigned int i=0; i<mTracks.size(); ++i){
         tracksVec.push_back( mTracks[i] );
     }

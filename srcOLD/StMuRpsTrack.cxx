@@ -1,7 +1,7 @@
 #include "StMuRpsTrackPoint.h"
 #include "StMuRpsTrack.h"
 
-#include "StRpsTrackPoint.h"
+#include "StRpsTrackPoint.h" 
 #include "StRpsTrack.h"
 
 #include <cmath>
@@ -40,7 +40,7 @@ unsigned int StMuRpsTrack::planesUsed() const {
 }
 
 double StMuRpsTrack::thetaRp(unsigned int coordinate) const {
-    if(coordinate>rpsAngleTheta) return 0.0;
+    if(coordinate > rpsAngleTheta) return 0.0;
     if(mType==rpsLocal) return theta(coordinate);
     TVector3 deltaVector = trackPoint(1)->positionVec() - trackPoint(0)->positionVec();
     return atan((coordinate<rpsAngleTheta ? deltaVector[coordinate] : deltaVector.Perp())/abs(deltaVector.z()));

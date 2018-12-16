@@ -14,11 +14,11 @@
  * Initial Revision
  *
  **************************************************************************/
-#ifndef StRpsRomanPot_hh
-#define StRpsRomanPot_hh
+#ifndef StRpsRomanPot_h
+#define StRpsRomanPot_h
 
-#include "TObject.h" // "StObject.h"
-#include "TClonesArray.h" // "StContainers.h"
+#include "TObject.h"  // "StObject.h"
+#include "TClonesArray.h" //"StContainers.h"
 #include "StRpsPlane.h"
 
 class StRpsCollection;

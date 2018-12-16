@@ -26,12 +26,13 @@
  * Initial Revision.
  *
  ***************************************************************************/
-#ifndef StRpsTrack_h
-#define StRpsTrack_h
+#ifndef StRpsTrack_hh
+#define StRpsTrack_hh
 
-#include "TObject.h"  // "StObject.h"
-#include "TClonesArray.h" //"StContainers.h"
+#include "TObject.h" // "StObject.h"
+#include "TClonesArray.h" // "StContainers.h"
 #include "TVector3.h" // "StThreeVectorF.h"
+#include <vector> // added
 
 class StRpsTrackPoint;
 
@@ -70,10 +71,10 @@ public:
     enum {mNumberOfStationsInBranch = 2};
 
 private:
-    StPtrVecRpsTrackPoint mTrackPoints;  // pointers to track points (local tracks)
-    TVector3 mP;                          // three-vector with reconstructed track momentum
-    Int_t          mBranch;                     // detectors branch, EU=0, ED=1, WU=2, WD=3 
-    StRpsTrackType mType;                       // type of the track
+    vector<StRpsTrackPoint*> 	mTrackPoints; //StPtrVecRpsTrackPoint mTrackPoints;	 // pointers to track points (local tracks)
+    TVector3 mP;				// three-vector with reconstructed track momentum
+    Int_t          mBranch;			// detectors branch, EU=0, ED=1, WU=2, WD=3 
+    StRpsTrackType mType;			// type of the track
     
     ClassDef(StRpsTrack, 1)
 };
@@ -85,18 +86,18 @@ inline StRpsTrackPoint* StRpsTrack::trackPoint(unsigned int station) const
 inline TVector3 StRpsTrack::pVec() const { return mP; }
 inline int StRpsTrack::branch() const { return mBranch; }
 inline StRpsTrack::StRpsTrackType StRpsTrack::type() const { return mType; }
-inline double StRpsTrack::phi() const { return mP.phi(); }
+inline double StRpsTrack::phi() const { return mP.Phi(); } // return mP.phi();
 inline double StRpsTrack::t(double beamMomentum) const
 {
   return -2*beamMomentum*beamMomentum*(1-xi(beamMomentum))*(1-cos(theta(rpsAngleTheta)));
 }
 inline double StRpsTrack::xi(double beamMomentum) const
 {
-    return (beamMomentum - mP.mag())/beamMomentum;
+    return (beamMomentum - mP.Mag())/beamMomentum; // return (beamMomentum - mP.mag())/beamMomentum;
 }
-inline double StRpsTrack::p() const { return mP.mag(); }
-inline double StRpsTrack::pt() const { return mP.perp(); }
-inline double StRpsTrack::eta() const { return mP.pseudoRapidity(); }
+inline double StRpsTrack::p() const { return mP.Mag(); } // return mP.mag();
+inline double StRpsTrack::pt() const { return mP.Perp(); } // return mP.perp();
+inline double StRpsTrack::eta() const { return mP.PseudoRapidity(); } // return mP.pseudoRapidity();
 
 inline void StRpsTrack::setTrackPoint(StRpsTrackPoint* trackPoint, unsigned int station)
 {

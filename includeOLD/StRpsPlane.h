@@ -14,12 +14,11 @@
  * Initial Revision
  *
  **************************************************************************/
-#ifndef StRpsPlane_hh
-#define StRpsPlane_hh
+#ifndef StRpsPlane_h
+#define StRpsPlane_h
 
-#include "TObject.h" // "StObject.h"
+#include "TObject.h"  // "StObject.h"
 #include "TClonesArray.h" // "StContainers.h"
-#include <vector>
 
 
 class StRpsCluster;
@@ -43,8 +42,8 @@ public:
     const StRpsCluster* cluster(unsigned int) const;
     StRpsCluster*       cluster(unsigned int);
         
-    const vector<StRpsCluster*>& clusters() const; // const StSPtrVecRpsCluster& clusters() const;
-    vector<StRpsCluster*>&       clusters(); // StSPtrVecRpsCluster&       clusters();
+    const StSPtrVecRpsCluster& clusters() const;
+    StSPtrVecRpsCluster&       clusters();
 
     void addCluster(StRpsCluster*);
     void setOffset(double);
@@ -66,7 +65,7 @@ protected:
     Short_t  mOrientation;
     UChar_t  mStatus;
     UChar_t  mRomanPotId; // 0-7
-    vector<StRpsCluster*> 	mClusters; //StSPtrVecRpsCluster mClusters;
+    StSPtrVecRpsCluster mClusters;
 
     ClassDef(StRpsPlane,1)
 };
