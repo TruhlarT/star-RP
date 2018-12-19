@@ -1,33 +1,33 @@
-#include "StMuRpsTrackPoint.h"
+#include "StRpsPreTrackPoint.h"
 #include "StRpsTrackPoint.h"
 
-ClassImp(StMuRpsTrackPoint)
+ClassImp(StRpsPreTrackPoint)
 
-StMuRpsTrackPoint::StMuRpsTrackPoint() {
+StRpsPreTrackPoint::StRpsPreTrackPoint() {
     mRpId = -1;
     for (unsigned int i=0; i<StRpsTrackPoint::mNumberOfPlanesInRp; ++i) mClusterId[i] = -1;
     for (unsigned int i=0; i<StRpsTrackPoint::mNumberOfPmtsInRp; ++i) mTime[i] = -1;
-    mQuality = rpsNotSet; // mQuality = StMuRpsTrackPoint::StMuRpsTrackPointQuality::rpsNotSet
+    mQuality = rpsNotSet; // mQuality = StRpsPreTrackPoint::StRpsPreTrackPointQuality::rpsNotSet
 }
 
-StMuRpsTrackPoint::StMuRpsTrackPoint(const StMuRpsTrackPoint& trackPoint) {
+StRpsPreTrackPoint::StRpsPreTrackPoint(const StRpsPreTrackPoint& trackPoint) {
     *this = trackPoint;
 }
 
-StMuRpsTrackPoint::~StMuRpsTrackPoint() { /* no op */ }
+StRpsPreTrackPoint::~StRpsPreTrackPoint() { /* no op */ }
 
-StMuRpsTrackPoint& StMuRpsTrackPoint::operator=(const StMuRpsTrackPoint& trackPoint) {
+StRpsPreTrackPoint& StRpsPreTrackPoint::operator=(const StRpsPreTrackPoint& trackPoint) {
     if (this != &trackPoint) {
         mPosition = trackPoint.positionVec();
         mRpId = trackPoint.rpId();
         for (unsigned int i=0; i<StRpsTrackPoint::mNumberOfPlanesInRp; ++i ) mClusterId[i] = trackPoint.clusterId(i);
         for (unsigned int i=0; i<StRpsTrackPoint::mNumberOfPmtsInRp; ++i ) mTime[i] = trackPoint.time(i);
-        mQuality = (StMuRpsTrackPoint::StMuRpsTrackPointQuality)trackPoint.quality();
+        mQuality = (StRpsPreTrackPoint::StRpsPreTrackPointQuality)trackPoint.quality();
     }
     return *this;
 }
 
-unsigned int StMuRpsTrackPoint::planesUsed() const {
+unsigned int StRpsPreTrackPoint::planesUsed() const {
     unsigned int nPlanesUsed = 0;
     for(unsigned int i=0; i<StRpsTrackPoint::mNumberOfPlanesInRp; ++i)
         if (mClusterId[i]>-1) ++nPlanesUsed;

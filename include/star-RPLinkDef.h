@@ -7,9 +7,9 @@
 #pragma link off all functions;
 
 
-#pragma link C++ class StMuRpsCollection+;
-#pragma link C++ class StMuRpsTrack+;
-#pragma link C++ class StMuRpsTrackPoint+;
+#pragma link C++ class StRpsPreCollection+;
+#pragma link C++ class StRpsPreTrack+;
+#pragma link C++ class StRpsPreTrackPoint+;
 #pragma link C++ class StRpsCollection+;
 #pragma link C++ class StRpsRomanPot+;
 #pragma link C++ class StRpsPlane+;

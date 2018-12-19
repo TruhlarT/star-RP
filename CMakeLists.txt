@@ -4,9 +4,9 @@ cmake_minimum_required (VERSION 2.6)
 
 #sources for shared library LIB
 set (SRCS
-  src/StMuRpsCollection.cxx
-  src/StMuRpsTrack.cxx
-  src/StMuRpsTrackPoint.cxx
+  src/StRpsPreCollection.cxx
+  src/StRpsPreTrack.cxx
+  src/StRpsPreTrackPoint.cxx
   src/StRpsCluster.cxx
   src/StRpsCollection.cxx
   src/StRpsPlane.cxx
@@ -20,9 +20,9 @@ set (LIB star-RP)
 
 #sources for ROOT dictionary
 set (SRCS_DICT
-  src/StMuRpsCollection.cxx
-  src/StMuRpsTrack.cxx
-  src/StMuRpsTrackPoint.cxx
+  src/StRpsPreCollection.cxx
+  src/StRpsPreTrack.cxx
+  src/StRpsPreTrackPoint.cxx
   src/StRpsCluster.cxx
   src/StRpsCollection.cxx
   src/StRpsPlane.cxx

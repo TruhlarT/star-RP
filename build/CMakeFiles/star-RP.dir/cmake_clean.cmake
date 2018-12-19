@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "G__star-RP.cxx"
-  "CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o"
   "CMakeFiles/star-RP.dir/src/StRpsCluster.cxx.o"
   "CMakeFiles/star-RP.dir/src/StRpsCollection.cxx.o"
   "CMakeFiles/star-RP.dir/src/StRpsPlane.cxx.o"

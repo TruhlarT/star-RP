@@ -1,30 +1,30 @@
-#include "StMuRpsTrackPoint.h"
-#include "StMuRpsTrack.h"
+#include "StRpsPreTrackPoint.h"
+#include "StRpsPreTrack.h"
 
 #include "StRpsTrackPoint.h"
 #include "StRpsTrack.h"
 
 #include <cmath>
 
-ClassImp(StMuRpsTrack)
+ClassImp(StRpsPreTrack)
 
-StMuRpsTrack::StMuRpsTrack(){
+StRpsPreTrack::StRpsPreTrack(){
     for(unsigned int i=0; i<mNumberOfStationsInBranch; ++i)
         mTrackPoints[ i ] = nullptr;
     mBranch = -1;
     mType = rpsUndefined;
 }
 
-StMuRpsTrack::StMuRpsTrack(const StMuRpsTrack& track) {
+StRpsPreTrack::StRpsPreTrack(const StRpsPreTrack& track) {
     *this = track;
 }
 
-StMuRpsTrack::~StMuRpsTrack() { /* no op */ }
+StRpsPreTrack::~StRpsPreTrack() { /* no op */ }
 
-StMuRpsTrack& StMuRpsTrack::operator=(const StMuRpsTrack& track) {
+StRpsPreTrack& StRpsPreTrack::operator=(const StRpsPreTrack& track) {
     if (this != &track) {
         for(unsigned int i=0; i<mNumberOfStationsInBranch; ++i){
-            mTrackPoints[i] = const_cast<StMuRpsTrackPoint*>(track.trackPoint(i));
+            mTrackPoints[i] = const_cast<StRpsPreTrackPoint*>(track.trackPoint(i));
         }
         mP = track.pVec();
         mType = track.type();
@@ -32,27 +32,27 @@ StMuRpsTrack& StMuRpsTrack::operator=(const StMuRpsTrack& track) {
     return *this;
 }
 
-unsigned int StMuRpsTrack::planesUsed() const {
+unsigned int StRpsPreTrack::planesUsed() const {
     unsigned int nPlanes = 0;
     for(unsigned int i=0; i<mNumberOfStationsInBranch; ++i)
         nPlanes += mTrackPoints[i].GetObject() ? trackPoint(i)->planesUsed() : 0;
     return nPlanes;
 }
 
-double StMuRpsTrack::thetaRp(unsigned int coordinate) const {
+double StRpsPreTrack::thetaRp(unsigned int coordinate) const {
     if(coordinate>rpsAngleTheta) return 0.0;
     if(mType==rpsLocal) return theta(coordinate);
     TVector3 deltaVector = trackPoint(1)->positionVec() - trackPoint(0)->positionVec();
     return atan((coordinate<rpsAngleTheta ? deltaVector[coordinate] : deltaVector.Perp())/abs(deltaVector.z()));
 }
 
-double StMuRpsTrack::phiRp() const{
+double StRpsPreTrack::phiRp() const{
     if(mType==rpsLocal) return phi();
     TVector3 deltaVector = trackPoint(1)->positionVec() - trackPoint(0)->positionVec();
     return deltaVector.Phi();
 }
 
-double StMuRpsTrack::time() const{
+double StRpsPreTrack::time() const{
     double sumTime=0.0;
     unsigned int numberOfPmtsWithSignal=0;
     for(unsigned int i=0; i<mNumberOfStationsInBranch; ++i){
@@ -67,6 +67,6 @@ double StMuRpsTrack::time() const{
     return numberOfPmtsWithSignal>0 ? sumTime/numberOfPmtsWithSignal : -1;
 }
 
-double StMuRpsTrack::theta(unsigned int coordinate) const{
+double StRpsPreTrack::theta(unsigned int coordinate) const{
     return coordinate < mNumberOfAngleTypes ? atan((coordinate<rpsAngleTheta ? mP[coordinate] : mP.Perp())/abs(mP.z())) : 0.0;
 }

@@ -150,87 +150,6 @@ G__star-RP.cxx.s:
 	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/G__star-RP.cxx.s
 .PHONY : G__star-RP.cxx.s
 
-src/StMuRpsCollection.o: src/StMuRpsCollection.cxx.o
-
-.PHONY : src/StMuRpsCollection.o
-
-# target to build an object file
-src/StMuRpsCollection.cxx.o:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o
-.PHONY : src/StMuRpsCollection.cxx.o
-
-src/StMuRpsCollection.i: src/StMuRpsCollection.cxx.i
-
-.PHONY : src/StMuRpsCollection.i
-
-# target to preprocess a source file
-src/StMuRpsCollection.cxx.i:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.i
-.PHONY : src/StMuRpsCollection.cxx.i
-
-src/StMuRpsCollection.s: src/StMuRpsCollection.cxx.s
-
-.PHONY : src/StMuRpsCollection.s
-
-# target to generate assembly for a file
-src/StMuRpsCollection.cxx.s:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.s
-.PHONY : src/StMuRpsCollection.cxx.s
-
-src/StMuRpsTrack.o: src/StMuRpsTrack.cxx.o
-
-.PHONY : src/StMuRpsTrack.o
-
-# target to build an object file
-src/StMuRpsTrack.cxx.o:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o
-.PHONY : src/StMuRpsTrack.cxx.o
-
-src/StMuRpsTrack.i: src/StMuRpsTrack.cxx.i
-
-.PHONY : src/StMuRpsTrack.i
-
-# target to preprocess a source file
-src/StMuRpsTrack.cxx.i:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.i
-.PHONY : src/StMuRpsTrack.cxx.i
-
-src/StMuRpsTrack.s: src/StMuRpsTrack.cxx.s
-
-.PHONY : src/StMuRpsTrack.s
-
-# target to generate assembly for a file
-src/StMuRpsTrack.cxx.s:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.s
-.PHONY : src/StMuRpsTrack.cxx.s
-
-src/StMuRpsTrackPoint.o: src/StMuRpsTrackPoint.cxx.o
-
-.PHONY : src/StMuRpsTrackPoint.o
-
-# target to build an object file
-src/StMuRpsTrackPoint.cxx.o:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o
-.PHONY : src/StMuRpsTrackPoint.cxx.o
-
-src/StMuRpsTrackPoint.i: src/StMuRpsTrackPoint.cxx.i
-
-.PHONY : src/StMuRpsTrackPoint.i
-
-# target to preprocess a source file
-src/StMuRpsTrackPoint.cxx.i:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.i
-.PHONY : src/StMuRpsTrackPoint.cxx.i
-
-src/StMuRpsTrackPoint.s: src/StMuRpsTrackPoint.cxx.s
-
-.PHONY : src/StMuRpsTrackPoint.s
-
-# target to generate assembly for a file
-src/StMuRpsTrackPoint.cxx.s:
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.s
-.PHONY : src/StMuRpsTrackPoint.cxx.s
-
 src/StRpsCluster.o: src/StRpsCluster.cxx.o
 
 .PHONY : src/StRpsCluster.o
@@ -311,6 +230,87 @@ src/StRpsPlane.s: src/StRpsPlane.cxx.s
 src/StRpsPlane.cxx.s:
 	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPlane.cxx.s
 .PHONY : src/StRpsPlane.cxx.s
+
+src/StRpsPreCollection.o: src/StRpsPreCollection.cxx.o
+
+.PHONY : src/StRpsPreCollection.o
+
+# target to build an object file
+src/StRpsPreCollection.cxx.o:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o
+.PHONY : src/StRpsPreCollection.cxx.o
+
+src/StRpsPreCollection.i: src/StRpsPreCollection.cxx.i
+
+.PHONY : src/StRpsPreCollection.i
+
+# target to preprocess a source file
+src/StRpsPreCollection.cxx.i:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.i
+.PHONY : src/StRpsPreCollection.cxx.i
+
+src/StRpsPreCollection.s: src/StRpsPreCollection.cxx.s
+
+.PHONY : src/StRpsPreCollection.s
+
+# target to generate assembly for a file
+src/StRpsPreCollection.cxx.s:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.s
+.PHONY : src/StRpsPreCollection.cxx.s
+
+src/StRpsPreTrack.o: src/StRpsPreTrack.cxx.o
+
+.PHONY : src/StRpsPreTrack.o
+
+# target to build an object file
+src/StRpsPreTrack.cxx.o:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o
+.PHONY : src/StRpsPreTrack.cxx.o
+
+src/StRpsPreTrack.i: src/StRpsPreTrack.cxx.i
+
+.PHONY : src/StRpsPreTrack.i
+
+# target to preprocess a source file
+src/StRpsPreTrack.cxx.i:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.i
+.PHONY : src/StRpsPreTrack.cxx.i
+
+src/StRpsPreTrack.s: src/StRpsPreTrack.cxx.s
+
+.PHONY : src/StRpsPreTrack.s
+
+# target to generate assembly for a file
+src/StRpsPreTrack.cxx.s:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.s
+.PHONY : src/StRpsPreTrack.cxx.s
+
+src/StRpsPreTrackPoint.o: src/StRpsPreTrackPoint.cxx.o
+
+.PHONY : src/StRpsPreTrackPoint.o
+
+# target to build an object file
+src/StRpsPreTrackPoint.cxx.o:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o
+.PHONY : src/StRpsPreTrackPoint.cxx.o
+
+src/StRpsPreTrackPoint.i: src/StRpsPreTrackPoint.cxx.i
+
+.PHONY : src/StRpsPreTrackPoint.i
+
+# target to preprocess a source file
+src/StRpsPreTrackPoint.cxx.i:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.i
+.PHONY : src/StRpsPreTrackPoint.cxx.i
+
+src/StRpsPreTrackPoint.s: src/StRpsPreTrackPoint.cxx.s
+
+.PHONY : src/StRpsPreTrackPoint.s
+
+# target to generate assembly for a file
+src/StRpsPreTrackPoint.cxx.s:
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.s
+.PHONY : src/StRpsPreTrackPoint.cxx.s
 
 src/StRpsRomanPot.o: src/StRpsRomanPot.cxx.o
 
@@ -405,15 +405,6 @@ help:
 	@echo "... G__star-RP.o"
 	@echo "... G__star-RP.i"
 	@echo "... G__star-RP.s"
-	@echo "... src/StMuRpsCollection.o"
-	@echo "... src/StMuRpsCollection.i"
-	@echo "... src/StMuRpsCollection.s"
-	@echo "... src/StMuRpsTrack.o"
-	@echo "... src/StMuRpsTrack.i"
-	@echo "... src/StMuRpsTrack.s"
-	@echo "... src/StMuRpsTrackPoint.o"
-	@echo "... src/StMuRpsTrackPoint.i"
-	@echo "... src/StMuRpsTrackPoint.s"
 	@echo "... src/StRpsCluster.o"
 	@echo "... src/StRpsCluster.i"
 	@echo "... src/StRpsCluster.s"
@@ -423,6 +414,15 @@ help:
 	@echo "... src/StRpsPlane.o"
 	@echo "... src/StRpsPlane.i"
 	@echo "... src/StRpsPlane.s"
+	@echo "... src/StRpsPreCollection.o"
+	@echo "... src/StRpsPreCollection.i"
+	@echo "... src/StRpsPreCollection.s"
+	@echo "... src/StRpsPreTrack.o"
+	@echo "... src/StRpsPreTrack.i"
+	@echo "... src/StRpsPreTrack.s"
+	@echo "... src/StRpsPreTrackPoint.o"
+	@echo "... src/StRpsPreTrackPoint.i"
+	@echo "... src/StRpsPreTrackPoint.s"
 	@echo "... src/StRpsRomanPot.o"
 	@echo "... src/StRpsRomanPot.i"
 	@echo "... src/StRpsRomanPot.s"

@@ -57,9 +57,9 @@ include CMakeFiles/star-RP.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/star-RP.dir/flags.make
 
-G__star-RP.cxx: ../include/StMuRpsCollection.h
-G__star-RP.cxx: ../include/StMuRpsTrack.h
-G__star-RP.cxx: ../include/StMuRpsTrackPoint.h
+G__star-RP.cxx: ../include/StRpsPreCollection.h
+G__star-RP.cxx: ../include/StRpsPreTrack.h
+G__star-RP.cxx: ../include/StRpsPreTrackPoint.h
 G__star-RP.cxx: ../include/StRpsCluster.h
 G__star-RP.cxx: ../include/StRpsCollection.h
 G__star-RP.cxx: ../include/StRpsPlane.h
@@ -68,78 +68,78 @@ G__star-RP.cxx: ../include/StRpsTrack.h
 G__star-RP.cxx: ../include/StRpsTrackPoint.h
 G__star-RP.cxx: ../include/star-RPLinkDef.h
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating G__star-RP.cxx"
-	rootcint -f G__star-RP.cxx -c -p -I/home/truhlar/Desktop/STAR/VU/star-RP/include StMuRpsCollection.h StMuRpsTrack.h StMuRpsTrackPoint.h StRpsCluster.h StRpsCollection.h StRpsPlane.h StRpsRomanPot.h StRpsTrack.h StRpsTrackPoint.h star-RPLinkDef.h
+	rootcint -f G__star-RP.cxx -c -p -I/home/truhlar/Desktop/STAR/VU/star-RP/include StRpsPreCollection.h StRpsPreTrack.h StRpsPreTrackPoint.h StRpsCluster.h StRpsCollection.h StRpsPlane.h StRpsRomanPot.h StRpsTrack.h StRpsTrackPoint.h star-RPLinkDef.h
 
-CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o: CMakeFiles/star-RP.dir/flags.make
-CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o: ../src/StMuRpsCollection.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o -c /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsCollection.cxx
+CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o: CMakeFiles/star-RP.dir/flags.make
+CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o: ../src/StRpsPreCollection.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o -c /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreCollection.cxx
 
-CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsCollection.cxx > CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.i
+CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreCollection.cxx > CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.i
 
-CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsCollection.cxx -o CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.s
+CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreCollection.cxx -o CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.s
 
-CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o.requires:
+CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o.requires:
 
-.PHONY : CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o.requires
+.PHONY : CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o.requires
 
-CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o.provides: CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o.requires
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o.provides.build
-.PHONY : CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o.provides
+CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o.provides: CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o.requires
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o.provides.build
+.PHONY : CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o.provides
 
-CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o.provides.build: CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o
-
-
-CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o: CMakeFiles/star-RP.dir/flags.make
-CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o: ../src/StMuRpsTrack.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o -c /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsTrack.cxx
-
-CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsTrack.cxx > CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.i
-
-CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsTrack.cxx -o CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.s
-
-CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o.requires:
-
-.PHONY : CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o.requires
-
-CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o.provides: CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o.requires
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o.provides.build
-.PHONY : CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o.provides
-
-CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o.provides.build: CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o
+CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o.provides.build: CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o
 
 
-CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o: CMakeFiles/star-RP.dir/flags.make
-CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o: ../src/StMuRpsTrackPoint.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o -c /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsTrackPoint.cxx
+CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o: CMakeFiles/star-RP.dir/flags.make
+CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o: ../src/StRpsPreTrack.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o -c /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreTrack.cxx
 
-CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsTrackPoint.cxx > CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.i
+CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreTrack.cxx > CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.i
 
-CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/truhlar/Desktop/STAR/VU/star-RP/src/StMuRpsTrackPoint.cxx -o CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.s
+CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreTrack.cxx -o CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.s
 
-CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o.requires:
+CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o.requires:
 
-.PHONY : CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o.requires
+.PHONY : CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o.requires
 
-CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o.provides: CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o.requires
-	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o.provides.build
-.PHONY : CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o.provides
+CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o.provides: CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o.requires
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o.provides.build
+.PHONY : CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o.provides
 
-CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o.provides.build: CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o
+CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o.provides.build: CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o
+
+
+CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o: CMakeFiles/star-RP.dir/flags.make
+CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o: ../src/StRpsPreTrackPoint.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o -c /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreTrackPoint.cxx
+
+CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreTrackPoint.cxx > CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.i
+
+CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/truhlar/Desktop/STAR/VU/star-RP/src/StRpsPreTrackPoint.cxx -o CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.s
+
+CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o.requires:
+
+.PHONY : CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o.requires
+
+CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o.provides: CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o.requires
+	$(MAKE) -f CMakeFiles/star-RP.dir/build.make CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o.provides.build
+.PHONY : CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o.provides
+
+CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o.provides.build: CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o
 
 
 CMakeFiles/star-RP.dir/src/StRpsCluster.cxx.o: CMakeFiles/star-RP.dir/flags.make
@@ -312,9 +312,9 @@ CMakeFiles/star-RP.dir/G__star-RP.cxx.o.provides.build: CMakeFiles/star-RP.dir/G
 
 # Object files for target star-RP
 star__RP_OBJECTS = \
-"CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o" \
-"CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o" \
-"CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o" \
+"CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o" \
+"CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o" \
+"CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o" \
 "CMakeFiles/star-RP.dir/src/StRpsCluster.cxx.o" \
 "CMakeFiles/star-RP.dir/src/StRpsCollection.cxx.o" \
 "CMakeFiles/star-RP.dir/src/StRpsPlane.cxx.o" \
@@ -326,9 +326,9 @@ star__RP_OBJECTS = \
 # External object files for target star-RP
 star__RP_EXTERNAL_OBJECTS =
 
-libstar-RP.so: CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o
-libstar-RP.so: CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o
-libstar-RP.so: CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o
+libstar-RP.so: CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o
+libstar-RP.so: CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o
+libstar-RP.so: CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o
 libstar-RP.so: CMakeFiles/star-RP.dir/src/StRpsCluster.cxx.o
 libstar-RP.so: CMakeFiles/star-RP.dir/src/StRpsCollection.cxx.o
 libstar-RP.so: CMakeFiles/star-RP.dir/src/StRpsPlane.cxx.o
@@ -346,9 +346,9 @@ CMakeFiles/star-RP.dir/build: libstar-RP.so
 
 .PHONY : CMakeFiles/star-RP.dir/build
 
-CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StMuRpsCollection.cxx.o.requires
-CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StMuRpsTrack.cxx.o.requires
-CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StMuRpsTrackPoint.cxx.o.requires
+CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o.requires
+CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o.requires
+CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o.requires
 CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StRpsCluster.cxx.o.requires
 CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StRpsCollection.cxx.o.requires
 CMakeFiles/star-RP.dir/requires: CMakeFiles/star-RP.dir/src/StRpsPlane.cxx.o.requires
