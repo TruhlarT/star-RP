@@ -11,7 +11,10 @@
 
 //local headers
 #include "StRPEvent.h"
-
+#include "StMuDst.h"
+#include "StMuRpsCollection.h"
+#include "StMuRpsTrackPoint.h"
+#include "StMuRpsTrack.h"
 #include "StUPCFilterRPUtil.h"
 
 //_____________________________________________________________________________

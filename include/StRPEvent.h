@@ -84,12 +84,12 @@ private:
 
   TArrayI mTrgIDs; // fired trigger IDs
 
-  static TClonesArray *mgRPTracks; // array of upc tracks
-  TClonesArray *mRPTracks; //-> array of upc tracks
+  static TClonesArray *mgTracks; // array of upc tracks
+  TClonesArray *mTracks; //-> array of upc tracks
   Int_t mNTracks; //! number of upc tracks in event, local use when filling
 
-  static TClonesArray *mgRPTrackPoints; // array of upc tracks
-  TClonesArray *mRPTrackPoints; //-> array of upc tracks
+  static TClonesArray *mgTrackPoints; // array of upc tracks
+  TClonesArray *mTrackPoints; //-> array of upc tracks
   Int_t mNTrackPoints; //! number of upc tracks in event, local use when filling
 /*
   static TClonesArray *mgRPPreTracks; // array of upc tracks
