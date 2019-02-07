@@ -13,6 +13,8 @@ set (SRCS
   src/StRpsRomanPot.cxx
   src/StRpsTrack.cxx
   src/StRpsTrackPoint.cxx
+  src/StUPCFilterRPUtil.cxx
+  src/StRPEvent.cxx
   )
 
 #name of shared libarary LIB
@@ -29,6 +31,8 @@ set (SRCS_DICT
   src/StRpsRomanPot.cxx
   src/StRpsTrack.cxx
   src/StRpsTrackPoint.cxx
+  src/StUPCFilterRPUtil.cxx
+  src/StRPEvent.cxx
   )
 
 #LinkDef file for ROOT dictionary
