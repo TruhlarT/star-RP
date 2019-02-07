@@ -55,12 +55,16 @@ public:
   StRpsTrack *getTrack(Int_t iTrack) const;
   Int_t getNumberOfTrackPoints() const;
   StRpsTrackPoint *getTrackPoint(Int_t iTrackPoint) const;
-
+/*
   Int_t getNumberOfPreTracks() const;
   StRpsPreTrack *getPreTrack(Int_t iTrack) const;
+
   Int_t getNumberOfPreTrackPoints() const;
   StRpsPreTrackPoint *getPreTrackPoint(Int_t iTrackPoint) const;
 
+  Int_t getNumberOfPreCollections() const;
+  StRpsPreCollection *getPreCollection(Int_t iPreCollection) const;
+*/
   Int_t getNumberOfClusters() const;
   StRpsCluster *getCluster(Int_t iCluster) const;
 
@@ -72,9 +76,6 @@ public:
 
   Int_t getNumberOfCollections() const;
   StRpsCollection *getCollection(Int_t iCollection) const;
-
-  Int_t getNumberOfPreCollections() const;
-  StRpsPreCollection *getPreCollection(Int_t iPreCollection) const;
 
 private:
 
@@ -90,7 +91,7 @@ private:
   static TClonesArray *mgRPTrackPoints; // array of upc tracks
   TClonesArray *mRPTrackPoints; //-> array of upc tracks
   Int_t mNTrackPoints; //! number of upc tracks in event, local use when filling
-
+/*
   static TClonesArray *mgRPPreTracks; // array of upc tracks
   TClonesArray *mRPPreTracks; //-> array of upc tracks
   Int_t mNPreTracks; //! number of upc tracks in event, local use when filling
@@ -102,7 +103,7 @@ private:
   static TClonesArray *mgPreCollections; // array of BEMC clusters
   TClonesArray *mPreCollections; //-> array of BEMC clusters
   Int_t mNPreCollections; //! number of BEMC clusters written in event, local use when filling
-
+*/
   static TClonesArray *mgCollections; // array of UPC vertices
   TClonesArray *mCollections; //-> array of UPC vertices
   Int_t mNCollections; //! number of vertices written in event, local use when filling

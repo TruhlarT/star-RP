@@ -12,10 +12,11 @@
 #include "TParticle.h"
 
 //local headers
-
+/*
 #include "StRpsPreCollection.h"
 #include "StRpsPreTrack.h"
 #include "StRpsPreTrackPoint.h"
+*/
 #include "StRpsCollection.h"
 #include "StRpsRomanPot.h"
 #include "StRpsPlane.h"
@@ -26,9 +27,6 @@
 
 ClassImp(StRPEvent);
 
-class StRpsPreCollection; 
-class StRpsPreTrack; 
-class StRpsPreTrackPoint; 
 class StRpsCollection; 
 class StRpsRomanPot; 
 class StRpsPlane; 
@@ -36,10 +34,18 @@ class StRpsCluster;
 class StRpsTrack;
 class StRpsTrackPoint;
 
+/*
+class StRpsPreCollection; 
+class StRpsPreTrack; 
+class StRpsPreTrackPoint; 
+
 TClonesArray *StRPEvent::mgPreCollections = 0;
-TClonesArray *StRPEvent::mgCollections = 0;
 TClonesArray *StRPEvent::mgPreTrackPoints = 0;
 TClonesArray *StRPEvent::mgPreTracks = 0;
+*/
+
+
+TClonesArray *StRPEvent::mgCollections = 0;
 TClonesArray *StRPEvent::mgTrackPoints = 0;
 TClonesArray *StRPEvent::mgTracks = 0;
 TClonesArray *StRPEvent::mgRomanPots = 0;
@@ -50,10 +56,10 @@ TClonesArray *StRPEvent::mgClusters = 0;
 
 //_____________________________________________________________________________
 StRPEvent::StRPEvent():
-  mPreCollections(0x0), mNPreCollections(0),
+ // mPreCollections(0x0), mNPreCollections(0),
   mCollections(0x0), mNCollections(0),
-  mPreTrackPoints(0x0), mNPreTrackPoints(0),
-  mPreTracks(0x0), mNPreTracks(0),
+ // mPreTrackPoints(0x0), mNPreTrackPoints(0),
+ // mPreTracks(0x0), mNPreTracks(0),
   mTrackPoints(0x0), mNTrackPoints(0),
   mTracks(0x0), mNTracks(0),
   mRomanPots(0x0), mNRomanPots(0),
@@ -64,19 +70,12 @@ StRPEvent::StRPEvent():
 
   mTrgIDs.Set(0);
 
-
-  if(!mgPreCollections) {
-    mgPreCollections = new TClonesArray("StRpsPreCollection");
-    mPreCollections = mgPreCollections;
-    mPreCollections->SetOwner(kTRUE);
-  }
-
   if(!mgCollections) {
     mgCollections = new TClonesArray("StRpsCollection");
     mCollections = mgCollections;
     mCollections->SetOwner(kTRUE);
   }
-
+/*
   if(!mgPreTrackPoints) {
     mgPreTrackPoints = new TClonesArray("StRpsPreTrackPoint");
     mPreTrackPoints = mgPreTrackPoints;
@@ -89,6 +88,12 @@ StRPEvent::StRPEvent():
     mPreTracks->SetOwner(kTRUE);
   }
 
+  if(!mgPreCollections) {
+    mgPreCollections = new TClonesArray("StRpsPreCollection");
+    mPreCollections = mgPreCollections;
+    mPreCollections->SetOwner(kTRUE);
+  }
+*/
   if(!mgTrackPoints) {
     mgTrackPoints = new TClonesArray("StRpsTrackPoint");
     mTrackPoints = mgTrackPoints;
@@ -132,10 +137,12 @@ StRPEvent::~StRPEvent()
   if(mRomanPots) {delete mRomanPots; mRomanPots = 0x0;}
   if(mTracks) {delete mTracks; mTracks = 0x0;}
   if(mTrackPoints) {delete mTrackPoints; mTrackPoints = 0x0;}
+/*
   if(mPreTracks) {delete mPreTracks; mPreTracks = 0x0;}
   if(mPreTrackPoints) {delete mPreTrackPoints; mPreTrackPoints = 0x0;}
-  if(mCollections) {delete mCollections; mCollections = 0x0;}
   if(mPreCollections) {delete mPreCollections; mPreCollections = 0x0;}
+*/
+  if(mCollections) {delete mCollections; mCollections = 0x0;}
 
 
 }//~StRPEvent
@@ -146,15 +153,16 @@ void StRPEvent::clearEvent()
   // clear event variables
 
   mTrgIDs.Set(0);
-
+/*
   mPreCollections->Clear("C"); 
   mNPreCollections = 0;
-  mCollections->Clear("C"); 
-  mNCollections = 0;
   mPreTrackPoints->Clear("C"); 
   mNPreTrackPoints = 0;
   mPreTracks->Clear("C"); 
   mNPreTracks = 0;
+ */ 
+  mCollections->Clear("C"); 
+  mNCollections = 0;
   mTrackPoints->Clear("C"); 
   mNTrackPoints = 0;
   mTracks->Clear("C"); 
@@ -238,7 +246,7 @@ StRpsCollection *StRPEvent::addCollection()
   return dynamic_cast<StRpsCollection*>( mCollections->ConstructedAt(mNCollections++) );
 
 }//addCollection
-
+/*
 //_____________________________________________________________________________
 StRpsPreTrackPoint *StRPEvent::addPreTrackPoint()
 {
@@ -265,7 +273,7 @@ StRpsPreTrack *StRPEvent::addPreTrack()
   return dynamic_cast<StRpsPreTrack*>( mRPPreTracks->ConstructedAt(mNPreTracks++) );
 
 }//addPreTrack
-
+*/
 //_____________________________________________________________________________
 Bool_t StRPEvent::isTrigger(Int_t id) const
 {
@@ -300,7 +308,7 @@ StRpsTrack *StRPEvent::getTrack(Int_t iTrack) const
   return track;
 
 }//getTrack
-
+/*
 //_____________________________________________________________________________
 Int_t StRPEvent::getNumberOfPreTracks() const {
 
@@ -323,7 +331,7 @@ StRpsPreTrack *StRPEvent::getPreTrack(Int_t iTrack) const
   return track;
 
 }//getPreTrack
-
+*/
 //_____________________________________________________________________________
 Int_t StRPEvent::getNumberOfTrackPoints() const {
 
@@ -346,7 +354,7 @@ StRpsTrackPoint *StRPEvent::getTrackPoint(Int_t iTrackPoint) const
   return trackPoint;
 
 }//getTrackPoint
-
+/*
 //_____________________________________________________________________________
 Int_t StRPEvent::getNumberOfPreTrackPoints() const {
 
@@ -369,7 +377,7 @@ StRpsPreTrackPoint *StRPEvent::getPreTrackPoint(Int_t iTrackPoint) const
   return trackPoint;
 
 }//getPreTrackPoint
-
+*/
 
 //_____________________________________________________________________________
 Int_t StRPEvent::getNumberOfClusters() const {
@@ -465,7 +473,7 @@ StRpsCollection *StRPEvent::getCollection(Int_t iCollection) const
 
 }//getCollection
 
-
+/*
 //_____________________________________________________________________________
 Int_t StRPEvent::getNumberOfPreCollections() const {
 
@@ -488,7 +496,7 @@ StRpsPreCollection *StRPEvent::getPreCollection(Int_t iPreCollection) const
   return PreCollection;
 
 }//getPreCollection
-
+*/
 
 
 
