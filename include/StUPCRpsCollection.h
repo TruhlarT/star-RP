@@ -30,6 +30,7 @@
 using namespace std; // added
 
 class StUPCRpsRomanPot;
+class StUPCRpsCluster;
 class StUPCRpsTrackPoint;
 class StUPCRpsTrack;
 

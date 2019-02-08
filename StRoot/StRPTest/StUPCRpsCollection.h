@@ -30,6 +30,7 @@
 using namespace std; // added
 
 class StUPCRpsRomanPot;
+class StUPCRpsCluster;
 class StUPCRpsTrackPoint;
 class StUPCRpsTrack;
 
@@ -56,7 +57,7 @@ public:
     enum {mNumberOfRomanPots = 8};
     
 private:
-    StUPCRpsRomanPot mRomanPots[mNumberOfRomanPots];
+    StUPCRpsRomanPot mRomanPots[8];
     UChar_t mSiliconBunch;
     
     vector<StUPCRpsTrackPoint*> 	mTrackPoints; // StSPtrVecRpsTrackPoint mTrackPoints;
