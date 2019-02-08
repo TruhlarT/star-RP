@@ -24,6 +24,7 @@
  *
  ***************************************************************************/
 #include "StUPCRpsTrack.h"
+#include "StUPCRpsTrackPoint.h"
 #include <cmath>
 
 ClassImp(StUPCRpsTrack)

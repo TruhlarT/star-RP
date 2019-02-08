@@ -17,6 +17,7 @@
  **************************************************************************/
 #include "StUPCRpsPlane.h"
 #include "StUPCRpsCluster.h"
+#include "StUPCRpsCollection.h"
 
 static const char rcsid[] = "$Id: StUPCRpsPlane.cxx,v 2.1 2009/11/23 22:18:25 ullrich Exp $";
 

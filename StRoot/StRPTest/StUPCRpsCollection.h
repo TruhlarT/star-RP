@@ -26,10 +26,10 @@
 #include "TObject.h" // "StObject.h"
 #include "TClonesArray.h" // "StContainers.h"
 #include <vector> // added
+#include "StUPCRpsRomanPot.h"
 
 using namespace std; // added
 
-class StUPCRpsRomanPot;
 class StUPCRpsCluster;
 class StUPCRpsTrackPoint;
 class StUPCRpsTrack;
@@ -57,7 +57,7 @@ public:
     enum {mNumberOfRomanPots = 8};
     
 private:
-    StUPCRpsRomanPot mRomanPots[8];
+    StUPCRpsRomanPot mRomanPots[mNumberOfRomanPots];
     UChar_t mSiliconBunch;
     
     vector<StUPCRpsTrackPoint*> 	mTrackPoints; // StSPtrVecRpsTrackPoint mTrackPoints;

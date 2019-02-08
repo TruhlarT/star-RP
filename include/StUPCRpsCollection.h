@@ -26,10 +26,10 @@
 #include "TObject.h" // "StObject.h"
 #include "TClonesArray.h" // "StContainers.h"
 #include <vector> // added
+#include "StUPCRpsRomanPot.h"
 
 using namespace std; // added
 
-class StUPCRpsRomanPot;
 class StUPCRpsCluster;
 class StUPCRpsTrackPoint;
 class StUPCRpsTrack;

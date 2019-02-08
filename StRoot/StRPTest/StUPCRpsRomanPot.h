@@ -19,6 +19,7 @@
 
 #include "TObject.h" // "StObject.h"
 #include "TClonesArray.h" // "StContainers.h"
+#include "StUPCRpsPlane.h"
 
 class StUPCRpsPlane;
 class StUPCRpsCollection;

@@ -22,6 +22,13 @@
 
 //local headers
 #include "StRPEvent.h"
+#include "StUPCRpsCollection.h"
+#include "StUPCRpsRomanPot.h"
+#include "StUPCRpsPlane.h"
+#include "StUPCRpsCluster.h"
+#include "StUPCRpsTrackPoint.h"
+#include "StUPCRpsTrack.h"
+
 #include "StUPCFilterRPUtil.h"
 
 
@@ -57,7 +64,7 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
       rpPlane->setOrientation(collection->orientationPlane(iRomanPotId, iPlaneId));  
       rpPlane->setStatus(collection->statusPlane(iRomanPotId, iPlaneId));
 
-      for(Int_t iCluster=0; iCluster < collection->numberOfClusters(); ++iCluster){
+      for(Int_t iCluster=0; iCluster < collection->numberOfClusters(iRomanPotId, iPlaneId); ++iCluster){
         StUPCRpsCluster *rpCluster = rpEvt->addCluster(); 
         rpCluster->setPosition(collection->positionCluster(iRomanPotId, iPlaneId, iCluster));
         rpCluster->setPositionRMS(collection->positionRMSCluster(iRomanPotId, iPlaneId, iCluster)); 
@@ -68,15 +75,14 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
         rpPlane->addCluster(rpCluster); 
       }
 
-    for(Int_t iTrackPoint=0; iTrackPoint < collection->numberOfTrackPoints(); ++iTrackPoint){
-      TObjArray *trkPointArray = collection->trackPoint(iTrackPoint); 
-      StMuRpsTrackPoint *trackPoint = dynamic_cast<StMuRpsTrackPoint*>( trkPointArray->At(iTrackPoint) );
+    for(Int_t iTrackPoint=0; iTrackPoint < collection->numberOfTrackPoints(); ++iTrackPoint){ 
+      StMuRpsTrackPoint *trackPoint = collection->trackPoint(iTrackPoint);
       StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
       rpTrackPoint->setPosition(trackPoint->positionVec());
       rpTrackPoint->setRpId(trackPoint->rpId());
-      rpTrackPoint->setClusterId(trackPoint->clusterId(), iPlaneId);
-      rpTrackPoint->setTime(trackPoint->time(), 1); // (double timeVal, unsigned int pmtId)
-      rpTrackPoint->setQuality(trackPoint->quality());
+      rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId);
+     // rpTrackPoint->setTime(trackPoint->time(1), 1); // trackPoint->time(pmtId) = co je pmtID????
+     // rpTrackPoint->setQuality(trackPoint->quality()); // problem enum ma ruzny jmena
 
       rpCollection->addTrackPoint(rpTrackPoint); 
     }
@@ -84,14 +90,24 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
   }
 
   for(Int_t iTrack=0; iTrack < collection->numberOfTracks(); ++iTrack){
-    TObjArray *trkArray = collection->track(iTrack);
-    StMuRpsTrack *track = dynamic_cast<StMuRpsTrack*>( trkArray->At(iTrack) );
+    StMuRpsTrack *track = collection->track(iTrack);
     StUPCRpsTrack *rpTrack = rpEvt->addTrack();
-    rpTrack->setTrackPoint(track->trackPoint(0), 0); // first of mNumberOfStationsInBranch = 2
-    rpTrack->setTrackPoint(track->trackPoint(1), 1); // second of mNumberOfStationsInBranch = 2
+    for(Int_t iTrackPoint=0; iTrackPoint < 2; ++iTrackPoint){
+   //   StMuRpsTrackPoint *trackPoint = track->trackPoint(iTrackPoint); // invalid conversion from 'const StMuRpsTrackPoint*' to 'StMuRpsTrackPoint*'
+     // StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
+     // rpTrackPoint->setPosition(trackPoint->positionVec());
+     // rpTrackPoint->setRpId(trackPoint->rpId());
+     // rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId); // Problem nemam iPlaneId
+     // rpTrackPoint->setTime(trackPoint->time(), 1); // (double timeVal, unsigned int pmtId)
+     // rpTrackPoint->setQuality(trackPoint->quality());
+
+     // rpTrack->setTrackPoint(rpTrackPoint, iTrackPoint);
+    }
+    //rpTrack->setTrackPoint(track->trackPoint(0), 0); // first of mNumberOfStationsInBranch = 2
+    //rpTrack->setTrackPoint(track->trackPoint(1), 1); // second of mNumberOfStationsInBranch = 2
     rpTrack->setP(track->pVec()); 
     rpTrack->setBranch(track->branch()); 
-    rpTrack->setType(track->type());
+    //rpTrack->setType(track->type());  // problem enum ma ruzny jmena
     rpCollection->addTrack(rpTrack); 
   }
 
