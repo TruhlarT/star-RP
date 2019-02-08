@@ -4,7 +4,7 @@ SRC="src"
 INC="include"
 DEST="StRoot/StRPTest"
 
-srclist=( StRpsPreCollection StRpsPreTrack StRpsPreTrackPoint StRpsCollection StRpsRomanPot StRpsPlane StRpsCluster StRpsTrack StRpsTrackPoint StRPEvent StUPCFilterRPUtil)
+srclist=( StUPCRpsPreCollection StUPCRpsPreTrack StUPCRpsPreTrackPoint StUPCRpsCollection StUPCRpsRomanPot StUPCRpsPlane StUPCRpsCluster StUPCRpsTrack StUPCRpsTrackPoint StRPEvent StUPCFilterRPUtil)
 
 
 mkdir -p $DEST

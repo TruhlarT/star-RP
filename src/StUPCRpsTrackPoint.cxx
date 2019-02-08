@@ -1,26 +1,26 @@
 /***************************************************************************
  *
- * $Id: StRpsTrackPoint.cxx,v 2.1 2015/10/02 19:48:14 ullrich Exp $
+ * $Id: StUPCRpsTrackPoint.cxx,v 2.1 2015/10/02 19:48:14 ullrich Exp $
  *
  * Author: Rafal Sikora, 1 Oct 2015
  *
  ***************************************************************************
  *
- * Description: StRpsTrackPoint class representing reconstructed (x,y,z)
+ * Description: StUPCRpsTrackPoint class representing reconstructed (x,y,z)
  * position of the hit in single Roman Pot detector
  *
  ***************************************************************************
  *
- * $Log: StRpsTrackPoint.cxx,v $
+ * $Log: StUPCRpsTrackPoint.cxx,v $
  * Revision 2.1  2015/10/02 19:48:14  ullrich
  * Initial Revision.
  *
  **************************************************************************/
-#include "StRpsTrackPoint.h"
+#include "StUPCRpsTrackPoint.h"
 
-ClassImp(StRpsTrackPoint)
+ClassImp(StUPCRpsTrackPoint)
 
-StRpsTrackPoint::StRpsTrackPoint()
+StUPCRpsTrackPoint::StUPCRpsTrackPoint()
 {
     mRpId = -1;
     for (unsigned int i=0; i<mNumberOfPlanesInRp; ++i) mClusterId[i] = -1;
@@ -28,14 +28,14 @@ StRpsTrackPoint::StRpsTrackPoint()
     mQuality = rpsNotSet;
 }
 
-StRpsTrackPoint::StRpsTrackPoint(const StRpsTrackPoint& trackPoint)
+StUPCRpsTrackPoint::StUPCRpsTrackPoint(const StUPCRpsTrackPoint& trackPoint)
 {
     *this = trackPoint;
 }
 
-StRpsTrackPoint::~StRpsTrackPoint() { /* no op */ }
+StUPCRpsTrackPoint::~StUPCRpsTrackPoint() { /* no op */ }
 
-StRpsTrackPoint& StRpsTrackPoint::operator=(const StRpsTrackPoint& trackPoint)
+StUPCRpsTrackPoint& StUPCRpsTrackPoint::operator=(const StUPCRpsTrackPoint& trackPoint)
 {
     if (this != &trackPoint) {
         mPosition = trackPoint.positionVec();
@@ -47,7 +47,7 @@ StRpsTrackPoint& StRpsTrackPoint::operator=(const StRpsTrackPoint& trackPoint)
     return *this;
 }
 
-unsigned int StRpsTrackPoint::planesUsed() const
+unsigned int StUPCRpsTrackPoint::planesUsed() const
 {
     unsigned int nPlanesUsed = 0;
     for(unsigned int i=0; i<mNumberOfPlanesInRp; ++i)

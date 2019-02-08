@@ -1,6 +1,6 @@
 /***************************************************************************
  *
- * $Id: StRpsPlane.h,v 2.1 2009/11/23 22:18:25 ullrich Exp $
+ * $Id: StUPCRpsPlane.h,v 2.1 2009/11/23 22:18:25 ullrich Exp $
  *
  * Author: Thomas Ullrich, Nov 2009
  ***************************************************************************
@@ -9,13 +9,13 @@
  *
  ***************************************************************************
  *
- * $Log: StRpsPlane.h,v $
+ * $Log: StUPCRpsPlane.h,v $
  * Revision 2.1  2009/11/23 22:18:25  ullrich
  * Initial Revision
  *
  **************************************************************************/
-#ifndef StRpsPlane_hh
-#define StRpsPlane_hh
+#ifndef StUPCRpsPlane_hh
+#define StUPCRpsPlane_hh
 
 #include "TObject.h" // "StObject.h"
 #include "TClonesArray.h" // "StContainers.h"
@@ -23,13 +23,13 @@
 
 using namespace std; // added
 
-class StRpsCluster;
-class StRpsRomanPot;
+class StUPCRpsCluster;
+class StUPCRpsCollection;
 
-class StRpsPlane : public TObject {
+class StUPCRpsPlane : public TObject {
 public:
-    StRpsPlane();
-    ~StRpsPlane();
+    StUPCRpsPlane();
+    ~StUPCRpsPlane();
 
     double offset() const;
     double z() const;
@@ -41,13 +41,13 @@ public:
     
     unsigned int  romanPotId() const;
 
-    const StRpsCluster* cluster(unsigned int) const;
-    StRpsCluster*       cluster(unsigned int);
+    const StUPCRpsCluster* cluster(unsigned int) const;
+    StUPCRpsCluster*       cluster(unsigned int);
         
-    const vector<StRpsCluster*>& clusters() const; // const StSPtrVecRpsCluster& clusters() const;
-    vector<StRpsCluster*>&       clusters(); // StSPtrVecRpsCluster&       clusters();
+    const vector<StUPCRpsCluster*>& clusters() const; // const StSPtrVecRpsCluster& clusters() const;
+    vector<StUPCRpsCluster*>&       clusters(); // StSPtrVecRpsCluster&       clusters();
 
-    void addCluster(StRpsCluster*);
+    void addCluster(StUPCRpsCluster*);
     void setOffset(double);
     void setZ(double);
     void setAngle(double);
@@ -55,7 +55,7 @@ public:
     void setStatus(unsigned char);
   
 protected:    
-    friend class StRpsCollection;
+    friend class StUPCRpsCollection;
     void setPlaneId(unsigned char);
     void setRomanPotId(unsigned char);
     
@@ -67,9 +67,9 @@ protected:
     Short_t  mOrientation;
     UChar_t  mStatus;
     UChar_t  mRomanPotId; // 0-7
-    vector<StRpsCluster*> 	mClusters; //StSPtrVecRpsCluster mClusters;
+    vector<StUPCRpsCluster*> 	mClusters; //StSPtrVecRpsCluster mClusters;
 
-    ClassDef(StRpsPlane,1)
+    ClassDef(StUPCRpsPlane,1)
 };
 
 #endif

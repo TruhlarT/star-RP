@@ -1,6 +1,6 @@
 /***************************************************************************
  *
- * $Id: StRpsCollection.cxx,v 2.3 2015/10/02 19:50:50 ullrich Exp $
+ * $Id: StUPCRpsCollection.cxx,v 2.3 2015/10/02 19:50:50 ullrich Exp $
  *
  * Author: Thomas Ullrich, Nov 2009
  ***************************************************************************
@@ -9,7 +9,7 @@
  *
  ***************************************************************************
  *
- * $Log: StRpsCollection.cxx,v $
+ * $Log: StUPCRpsCollection.cxx,v $
  * Revision 2.3  2015/10/02 19:50:50  ullrich
  * Added containers for tracks and points.
  *
@@ -20,16 +20,16 @@
  * Initial Revision
  *
  **************************************************************************/
-#include "StRpsCollection.h"
-#include "StRpsPlane.h"
+#include "StUPCRpsCollection.h"
+#include "StUPCRpsPlane.h"
 #include <vector> // added
 
-static const char rcsid[] = "$Id: StRpsCollection.cxx,v 2.3 2015/10/02 19:50:50 ullrich Exp $";
+static const char rcsid[] = "$Id: StUPCRpsCollection.cxx,v 2.3 2015/10/02 19:50:50 ullrich Exp $";
 
-ClassImp(StRpsCollection)
+ClassImp(StUPCRpsCollection)
 
-StRpsCollection::StRpsCollection()
-{
+StUPCRpsCollection::StUPCRpsCollection()
+{StUPCRpsPlane
     //
     // Set up all the roman pot and plane IDs
     //
@@ -43,16 +43,16 @@ StRpsCollection::StRpsCollection()
     mSiliconBunch = 0;
 }
 
-StRpsCollection::~StRpsCollection() { /* no op */ }
+StUPCRpsCollection::~StUPCRpsCollection() { /* no op */ }
 
 unsigned int
-StRpsCollection::numberOfRomanPots() const
+StUPCRpsCollection::numberOfRomanPots() const
 {
     return mNumberOfRomanPots;
 }
 
-const StRpsRomanPot*
-StRpsCollection::romanPot(unsigned int i) const
+const StUPCRpsRomanPot*
+StUPCRpsCollection::romanPot(unsigned int i) const
 {
     if (i < mNumberOfRomanPots)
         return &mRomanPots[i];
@@ -60,8 +60,8 @@ StRpsCollection::romanPot(unsigned int i) const
         return 0;
 }
 
-StRpsRomanPot*
-StRpsCollection::romanPot(unsigned int i)
+StUPCRpsRomanPot*
+StUPCRpsCollection::romanPot(unsigned int i)
 {
     if (i < mNumberOfRomanPots)
         return &mRomanPots[i];
@@ -69,14 +69,14 @@ StRpsCollection::romanPot(unsigned int i)
         return 0;
 }
 
-vector<StRpsCluster*> StRpsCollection::clusters() const
+vector<StUPCRpsCluster*> StUPCRpsCollection::clusters() const
 {
-    vector<StRpsCluster*> vec;
+    vector<StUPCRpsCluster*> vec;
     for (unsigned int i=0; i<mNumberOfRomanPots; i++) {
-        const StRpsRomanPot *seq = &mRomanPots[i];
+        const StUPCRpsRomanPot *seq = &mRomanPots[i];
         for (unsigned int j=0; j<seq->numberOfPlanes(); j++) {
-            const StRpsPlane *plane = seq->plane(j);
-            vector<StRpsCluster*> vecTmp = plane->clusters();
+            const StUPCRpsPlane *plane = seq->plane(j);
+            vector<StUPCRpsCluster*> vecTmp = plane->clusters();
             for (unsigned int k=0; k< vecTmp.size(); k++)
                 vec.push_back(vecTmp[k]);
             //for (unsigned int k=0; k<plane->numberOfClusters(); k++)
@@ -86,16 +86,16 @@ vector<StRpsCluster*> StRpsCollection::clusters() const
     return vec;
 }
 
-vector<StRpsTrackPoint*> StRpsCollection::trackPoints() const {
-    vector<StRpsTrackPoint*> trackPointsVec;
+vector<StUPCRpsTrackPoint*> StUPCRpsCollection::trackPoints() const {
+    vector<StUPCRpsTrackPoint*> trackPointsVec;
     for (unsigned int i=0; i<mTrackPoints.size(); ++i) {
         trackPointsVec.push_back( mTrackPoints[i] );
     }
     return trackPointsVec;
 }
 
-vector<StRpsTrack*> StRpsCollection::tracks() const {
-    vector<StRpsTrack*> tracksVec;
+vector<StUPCRpsTrack*> StUPCRpsCollection::tracks() const {
+    vector<StUPCRpsTrack*> tracksVec;
     for(unsigned int i=0; i<mTracks.size(); ++i){
         tracksVec.push_back( mTracks[i] );
     }
@@ -103,13 +103,13 @@ vector<StRpsTrack*> StRpsCollection::tracks() const {
 }
 
 unsigned char
-StRpsCollection::siliconBunch() const
+StUPCRpsCollection::siliconBunch() const
 {
     return mSiliconBunch;
 }
 
 void
-StRpsCollection::setSiliconBunch(unsigned char val)
+StUPCRpsCollection::setSiliconBunch(unsigned char val)
 {
     mSiliconBunch = val;
 }

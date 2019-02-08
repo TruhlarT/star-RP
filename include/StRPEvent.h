@@ -6,16 +6,17 @@
 //    Author: Truhlar Tomas
 //_____________________________________________________________________________
 
-
-class StRpsPreCollection; 
-class StRpsPreTrack; 
-class StRpsPreTrackPoint; 
-class StRpsCollection; 
-class StRpsRomanPot; 
-class StRpsPlane; 
-class StRpsCluster; 
-class StRpsTrack;
-class StRpsTrackPoint;
+/*
+class StUPCRpsPreCollection; 
+class StUPCRpsPreTrack; 
+class StUPCRpsPreTrackPoint; 
+*/
+class StUPCRpsCollection; 
+class StUPCRpsRomanPot; 
+class StUPCRpsPlane; 
+class StUPCRpsCluster; 
+class StUPCRpsTrack;
+class StUPCRpsTrackPoint;
 
 class TClonesArray;
 class TIterator;
@@ -37,45 +38,46 @@ public:
 
 
   //setters
-
-  StRpsPreCollection *addPreCollection(); 
-  StRpsPreTrack *addPreTrack(); 
-  StRpsPreTrackPoint *addPreTrackPoint(); 
-  StRpsCollection *addCollection(); 
-  StRpsRomanPot *addRomanPot(); 
-  StRpsPlane *addPlane(); 
-  StRpsCluster *addCluster(); 
-  StRpsTrack *addTrack();
-  StRpsTrackPoint *addTrackPoint();
+/*
+  StUPCRpsPreCollection *addPreCollection(); 
+  StUPCRpsPreTrack *addPreTrack(); 
+  StUPCRpsPreTrackPoint *addPreTrackPoint(); 
+*/
+  StUPCRpsCollection *addCollection(); 
+  StUPCRpsRomanPot *addRomanPot(); 
+  StUPCRpsPlane *addPlane(); 
+  StUPCRpsCluster *addCluster(); 
+  StUPCRpsTrack *addTrack();
+  StUPCRpsTrackPoint *addTrackPoint();
 
   //getters
   Bool_t isTrigger(Int_t id) const;
 
   Int_t getNumberOfTracks() const;
-  StRpsTrack *getTrack(Int_t iTrack) const;
+  StUPCRpsTrack *getTrack(Int_t iTrack) const;
   Int_t getNumberOfTrackPoints() const;
-  StRpsTrackPoint *getTrackPoint(Int_t iTrackPoint) const;
+  StUPCRpsTrackPoint *getTrackPoint(Int_t iTrackPoint) const;
 /*
   Int_t getNumberOfPreTracks() const;
-  StRpsPreTrack *getPreTrack(Int_t iTrack) const;
+  StUPCRpsPreTrack *getPreTrack(Int_t iTrack) const;
 
   Int_t getNumberOfPreTrackPoints() const;
-  StRpsPreTrackPoint *getPreTrackPoint(Int_t iTrackPoint) const;
+  StUPCRpsPreTrackPoint *getPreTrackPoint(Int_t iTrackPoint) const;
 
   Int_t getNumberOfPreCollections() const;
-  StRpsPreCollection *getPreCollection(Int_t iPreCollection) const;
+  StUPCRpsPreCollection *getPreCollection(Int_t iPreCollection) const;
 */
   Int_t getNumberOfClusters() const;
-  StRpsCluster *getCluster(Int_t iCluster) const;
+  StUPCRpsCluster *getCluster(Int_t iCluster) const;
 
   Int_t getNumberOfPlanes() const;
-  StRpsPlane *getPlane(Int_t iPlane) const;
+  StUPCRpsPlane *getPlane(Int_t iPlane) const;
 
   Int_t getNumberOfRomanPots() const;
-  StRpsRomanPot *getRomanPot(Int_t iRomanPot) const;
+  StUPCRpsRomanPot *getRomanPot(Int_t iRomanPot) const;
 
   Int_t getNumberOfCollections() const;
-  StRpsCollection *getCollection(Int_t iCollection) const;
+  StUPCRpsCollection *getCollection(Int_t iCollection) const;
 
 private:
 

@@ -4,15 +4,15 @@ cmake_minimum_required (VERSION 2.6)
 
 #sources for shared library LIB
 set (SRCS
-  src/StRpsPreCollection.cxx
-  src/StRpsPreTrack.cxx
-  src/StRpsPreTrackPoint.cxx
-  src/StRpsCluster.cxx
-  src/StRpsCollection.cxx
-  src/StRpsPlane.cxx
-  src/StRpsRomanPot.cxx
-  src/StRpsTrack.cxx
-  src/StRpsTrackPoint.cxx
+  src/StUPCRpsPreCollection.cxx
+  src/StUPCRpsPreTrack.cxx
+  src/StUPCRpsPreTrackPoint.cxx
+  src/StUPCRpsCluster.cxx
+  src/StUPCRpsCollection.cxx
+  src/StUPCRpsPlane.cxx
+  src/StUPCRpsRomanPot.cxx
+  src/StUPCRpsTrack.cxx
+  src/StUPCRpsTrackPoint.cxx
   src/StUPCFilterRPUtil.cxx
   src/StRPEvent.cxx
   )
@@ -22,15 +22,15 @@ set (LIB star-RP)
 
 #sources for ROOT dictionary
 set (SRCS_DICT
-  src/StRpsPreCollection.cxx
-  src/StRpsPreTrack.cxx
-  src/StRpsPreTrackPoint.cxx
-  src/StRpsCluster.cxx
-  src/StRpsCollection.cxx
-  src/StRpsPlane.cxx
-  src/StRpsRomanPot.cxx
-  src/StRpsTrack.cxx
-  src/StRpsTrackPoint.cxx
+  src/StUPCRpsPreCollection.cxx
+  src/StUPCRpsPreTrack.cxx
+  src/StUPCRpsPreTrackPoint.cxx
+  src/StUPCRpsCluster.cxx
+  src/StUPCRpsCollection.cxx
+  src/StUPCRpsPlane.cxx
+  src/StUPCRpsRomanPot.cxx
+  src/StUPCRpsTrack.cxx
+  src/StUPCRpsTrackPoint.cxx
   src/StUPCFilterRPUtil.cxx
   src/StRPEvent.cxx
   )

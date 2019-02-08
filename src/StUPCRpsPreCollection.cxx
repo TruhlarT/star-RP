@@ -1,14 +1,11 @@
-#include "StRpsPreCollection.h"
-#include "StRpsCollection.h"
-#include "StRpsRomanPot.h"
-#include "StRpsPlane.h"
-#include "StRpsCluster.h"
+#include "StUPCRpsPreCollection.h"
+#include "StUPCRpsCollection.h"
 #include <algorithm>
 
 
-ClassImp(StRpsPreCollection)
+ClassImp(StUPCRpsPreCollection)
 
-StRpsPreCollection::StRpsPreCollection(const StRpsCollection & rps){
+StUPCRpsPreCollection::StUPCRpsPreCollection(const StUPCRpsCollection & rps){
 
     mSiliconBunch = rps.siliconBunch();
 
@@ -52,20 +49,20 @@ StRpsPreCollection::StRpsPreCollection(const StRpsCollection & rps){
 	// Need to mirror over the StRpsTracks
 	int nTracks = rps.tracks().size();
 	for ( int iTrack = 0; iTrack < nTracks; iTrack++ ){
-		StRpsPreTrack * RpsPreTrack = new StRpsPreTrack();
+		StUPCRpsPreTrack * RpsPreTrack = new StUPCRpsPreTrack();
 
 		// Add the track points to the Tracks, if they are already in the collection (and they should be)
 		// then they wont be added again
-		for ( int iStation = 0; iStation < StRpsPreTrack::mNumberOfStationsInBranch; iStation++ ){
+		for ( int iStation = 0; iStation < StUPCRpsPreTrack::mNumberOfStationsInBranch; iStation++ ){
 			if ( rps.tracks()[iTrack] && rps.tracks()[iTrack]->trackPoint( iStation ) ){
-				StRpsPreTrackPoint * ptp = addTrackPoint( rps.tracks()[iTrack]->trackPoint( iStation ) );
+				StUPCRpsPreTrackPoint * ptp = addTrackPoint( rps.tracks()[iTrack]->trackPoint( iStation ) );
 				RpsPreTrack->setTrackPoint( ptp, iStation );
 			}
 		}
 		// Set the Track's attributes
 		RpsPreTrack->setP( TVector3( rps.tracks()[iTrack]->pVec().x(), rps.tracks()[iTrack]->pVec().y(), rps.tracks()[iTrack]->pVec().z() ) );
 		RpsPreTrack->setBranch( rps.tracks()[iTrack]->branch() );
-		RpsPreTrack->setType( (StRpsPreTrack::StRpsPreTrackType)rps.tracks()[iTrack]->type() );
+		RpsPreTrack->setType( (StUPCRpsPreTrack::StRpsPreTrackType)rps.tracks()[iTrack]->type() );
 
 		// add it to collection
 		mTracks.push_back( RpsPreTrack );
@@ -74,23 +71,23 @@ StRpsPreCollection::StRpsPreCollection(const StRpsCollection & rps){
 
 
 
-StRpsPreTrackPoint* StRpsPreCollection::addTrackPoint( StRpsTrackPoint * rpsTP ){
+StUPCRpsPreTrackPoint* StUPCRpsPreCollection::addTrackPoint( StUPCRpsTrackPoint * rpsTP ){
 
 	if ( mTrackPointsMap.count( rpsTP ) ){
 		return mTrackPointsMap[ rpsTP ]; 
 	}
 
-	StRpsPreTrackPoint * RpsPreTrackPoint = new StRpsPreTrackPoint();
+	StUPCRpsPreTrackPoint * RpsPreTrackPoint = new StUPCRpsPreTrackPoint();
 
 	RpsPreTrackPoint->setPosition( TVector3( rpsTP->x(), rpsTP->y(), rpsTP->z() ) );
-	RpsPreTrackPoint->setQuality( (StRpsPreTrackPoint::StRpsPreTrackPointQuality)rpsTP->quality() );
+	RpsPreTrackPoint->setQuality( (StUPCRpsPreTrackPoint::StRpsPreTrackPointQuality)rpsTP->quality() );
 	RpsPreTrackPoint->setRpId( rpsTP->rpId() );
 
-	for ( int iPlane = 0; iPlane < StRpsPreTrackPoint::mNumberOfPlanesInRp; iPlane++ ){
+	for ( int iPlane = 0; iPlane < StUPCRpsPreTrackPoint::mNumberOfPlanesInRp; iPlane++ ){
 		RpsPreTrackPoint->setClusterId( rpsTP->clusterId( iPlane ), iPlane );
 	}
 
-	for ( int iPmt = 0; iPmt < StRpsPreTrackPoint::mNumberOfPmtsInRp; iPmt++ ){
+	for ( int iPmt = 0; iPmt < StUPCRpsPreTrackPoint::mNumberOfPmtsInRp; iPmt++ ){
 		RpsPreTrackPoint->setTime( rpsTP->time( iPmt ), iPmt );
 	}
 

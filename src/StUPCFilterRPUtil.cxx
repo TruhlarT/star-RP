@@ -8,16 +8,10 @@
 //c++ headers
 #include "string.h"
 #include <vector>
-#include <map>
 
 //root headers
 #include "TObjArray.h"
-#include "TFile.h"
-#include "TTree.h"
-#include "TH1I.h"
 #include "TClonesArray.h"
-#include "TDatabasePDG.h"
-#include "TParticle.h"
 
 //StRoot headers
 #include "StMuDSTMaker/COMMON/StMuDst.h"
@@ -45,10 +39,10 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
 
 
   StMuRpsCollection *collection = mMuDst->RpsCollection();
-  StRpsCollection *rpCollection = rpEvt->addCollection(); 
+  StUPCRpsCollection *rpCollection = rpEvt->addCollection(); 
   rpCollection->setSiliconBunch(collection->siliconBunch());
 
-  StRpsRomanPot *rpRomanPot = rpEvt->addRomanPot(); 
+  StUPCRpsRomanPot *rpRomanPot = rpEvt->addRomanPot(); 
   for(Int_t iRomanPotId=0; iRomanPotId < collection->numberOfRomanPots(); ++iRomanPotId){
 
     rpRomanPot->setStatus(collection->status(iRomanPotId));
@@ -56,7 +50,7 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
     rpRomanPot->setTac(collection->tac(iRomanPotId, 0), collection->tac(iRomanPotId, 1)); 
 
     for(Int_t iPlaneId=0; iPlaneId < collection->numberOfPlanes(); ++iPlaneId){
-      StRpsPlane *rpPlane = rpEvt->addPlane(); 
+      StUPCRpsPlane *rpPlane = rpEvt->addPlane(); 
       rpPlane->setOffset(collection->offsetPlane(iRomanPotId, iPlaneId));
       rpPlane->setZ(collection->zPlane(iRomanPotId, iPlaneId));  
       rpPlane->setAngle(collection->anglePlane(iRomanPotId, iPlaneId));  
@@ -64,7 +58,7 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
       rpPlane->setStatus(collection->statusPlane(iRomanPotId, iPlaneId));
 
       for(Int_t iCluster=0; iCluster < collection->numberOfClusters(); ++iCluster){
-        StRpsCluster *rpCluster = rpEvt->addCluster(); 
+        StUPCRpsCluster *rpCluster = rpEvt->addCluster(); 
         rpCluster->setPosition(collection->positionCluster(iRomanPotId, iPlaneId, iCluster));
         rpCluster->setPositionRMS(collection->positionRMSCluster(iRomanPotId, iPlaneId, iCluster)); 
         rpCluster->setLength(collection->lengthCluster(iRomanPotId, iPlaneId, iCluster)); 
@@ -77,11 +71,11 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
     for(Int_t iTrackPoint=0; iTrackPoint < collection->numberOfTrackPoints(); ++iTrackPoint){
       TObjArray *trkPointArray = collection->trackPoint(iTrackPoint); 
       StMuRpsTrackPoint *trackPoint = dynamic_cast<StMuRpsTrackPoint*>( trkPointArray->At(iTrackPoint) );
-      StRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
+      StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
       rpTrackPoint->setPosition(trackPoint->positionVec());
       rpTrackPoint->setRpId(trackPoint->rpId());
       rpTrackPoint->setClusterId(trackPoint->clusterId(), iPlaneId);
-      rpTrackPoint->setTime(trackPoint->time(), unsigned int); // (double timeVal, unsigned int pmtId)
+      rpTrackPoint->setTime(trackPoint->time(), 1); // (double timeVal, unsigned int pmtId)
       rpTrackPoint->setQuality(trackPoint->quality());
 
       rpCollection->addTrackPoint(rpTrackPoint); 
@@ -92,7 +86,7 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
   for(Int_t iTrack=0; iTrack < collection->numberOfTracks(); ++iTrack){
     TObjArray *trkArray = collection->track(iTrack);
     StMuRpsTrack *track = dynamic_cast<StMuRpsTrack*>( trkArray->At(iTrack) );
-    StRpsTrack *rpTrack = rpEvt->addTrack();
+    StUPCRpsTrack *rpTrack = rpEvt->addTrack();
     rpTrack->setTrackPoint(track->trackPoint(0), 0); // first of mNumberOfStationsInBranch = 2
     rpTrack->setTrackPoint(track->trackPoint(1), 1); // second of mNumberOfStationsInBranch = 2
     rpTrack->setP(track->pVec()); 

@@ -1,6 +1,6 @@
 /***************************************************************************
  *
- * $Id: StRpsCluster.h,v 2.2 2015/10/02 19:50:09 ullrich Exp $
+ * $Id: StUPCRpsCluster.h,v 2.2 2015/10/02 19:50:09 ullrich Exp $
  *
  * Author: Thomas Ullrich, Nov 2009
  ***************************************************************************
@@ -10,7 +10,7 @@
  *
  ***************************************************************************
  *
- * $Log: StRpsCluster.h,v $
+ * $Log: StUPCRpsCluster.h,v $
  * Revision 2.2  2015/10/02 19:50:09  ullrich
  * Added mPositionRMS and accessors.
  *
@@ -18,20 +18,20 @@
  * Initial Revision
  *
  **************************************************************************/
-#ifndef StRpsCluster_hh
-#define StRpsCluster_hh
+#ifndef StUPCRpsCluster_hh
+#define StUPCRpsCluster_hh
 
 #include <iostream> // #include <Stiostream.h>
 #include "TObject.h" // #include "StObject.h"
 
-class StRpsPlane;
+class StUPCRpsPlane;
 
-class StRpsCluster : public TObject {
+class StUPCRpsCluster : public TObject {
 public:
-    StRpsCluster();
-    StRpsCluster(double pos, double posRMS, short len,
+    StUPCRpsCluster();
+    StUPCRpsCluster(double pos, double posRMS, short len,
                  double e, double xy, unsigned char qual);
-    ~StRpsCluster();
+    ~StUPCRpsCluster();
 
     double position() const;
     double positionRMS() const;
@@ -51,7 +51,7 @@ public:
     void setQuality(unsigned char);
 
 protected:
-    friend class StRpsPlane;
+    friend class StUPCRpsPlane;
     void setPlaneId(unsigned char);
     void setRomanPotId(unsigned char);
 
@@ -65,9 +65,9 @@ protected:
     UChar_t        mPlaneId;
     UChar_t        mRomanPotId;
 
-    ClassDef(StRpsCluster,2)
+    ClassDef(StUPCRpsCluster,2)
 };
 
-ostream& operator<<(ostream&, const StRpsCluster&);
+ostream& operator<<(ostream&, const StUPCRpsCluster&);
 
 #endif

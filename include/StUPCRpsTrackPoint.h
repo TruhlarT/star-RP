@@ -1,17 +1,17 @@
 /***************************************************************************
  *
- * $Id: StRpsTrackPoint.h,v 2.2 2015/10/07 17:30:13 ullrich Exp $
+ * $Id: StUPCRpsTrackPoint.h,v 2.2 2015/10/07 17:30:13 ullrich Exp $
  *
  * Author: Rafal Sikora, 1 Oct 2015
  *
  ***************************************************************************
  *
- * Description: StRpsTrackPoint class representing reconstructed (x,y,z)
+ * Description: StUPCRpsTrackPoint class representing reconstructed (x,y,z)
  * position of the hit in single Roman Pot detector
  *
  ***************************************************************************
  *
- * $Log: StRpsTrackPoint.h,v $
+ * $Log: StUPCRpsTrackPoint.h,v $
  * Revision 2.2  2015/10/07 17:30:13  ullrich
  * Changed const to enums and related changes.
  *
@@ -19,20 +19,20 @@
  * Initial Revision.
  *
  **************************************************************************/
-#ifndef StRpsTrackPoint_hh
-#define StRpsTrackPoint_hh
+#ifndef StUPCRpsTrackPoint_hh
+#define StUPCRpsTrackPoint_hh
 
 #include "TObject.h"  // "StObject.h"
 #include "TVector3.h" // "StThreeVectorF.h"
 
 
-class StRpsTrackPoint : public TObject {
+class StUPCRpsTrackPoint : public TObject {
 public:
-    StRpsTrackPoint();
-    StRpsTrackPoint(const StRpsTrackPoint&);
-    ~StRpsTrackPoint();
+    StUPCRpsTrackPoint();
+    StUPCRpsTrackPoint(const StUPCRpsTrackPoint&);
+    ~StUPCRpsTrackPoint();
     
-    StRpsTrackPoint& operator=(const StRpsTrackPoint&);
+    StUPCRpsTrackPoint& operator=(const StUPCRpsTrackPoint&);
     enum StRpsTrackPointQuality {rpsNormal, rpsGolden, rpsNotSet};
     
     TVector3 positionVec() const;
@@ -62,39 +62,39 @@ private:
     TVector3         mPosition;
     StRpsTrackPointQuality mQuality;
 
-    ClassDef( StRpsTrackPoint, 1 )
+    ClassDef( StUPCRpsTrackPoint, 1 )
 };
 
-inline TVector3 StRpsTrackPoint::positionVec() const { return mPosition; }
-inline int StRpsTrackPoint::rpId() const { return mRpId; }
-inline int StRpsTrackPoint::clusterId(unsigned int planeId ) const
+inline TVector3 StUPCRpsTrackPoint::positionVec() const { return mPosition; }
+inline int StUPCRpsTrackPoint::rpId() const { return mRpId; }
+inline int StUPCRpsTrackPoint::clusterId(unsigned int planeId ) const
 {
     return planeId<mNumberOfPlanesInRp ? mClusterId[planeId] : -1;
 }
-inline double StRpsTrackPoint::time(unsigned int pmtId) const
+inline double StUPCRpsTrackPoint::time(unsigned int pmtId) const
 {
     return pmtId<mNumberOfPmtsInRp ? mTime[pmtId] : -1;
 }
-inline StRpsTrackPoint::StRpsTrackPointQuality StRpsTrackPoint::quality() const { return mQuality; }
-inline double StRpsTrackPoint::x() const { return mPosition.x(); }
-inline double StRpsTrackPoint::y() const { return mPosition.y(); }
-inline double StRpsTrackPoint::z() const { return mPosition.z(); }
+inline StUPCRpsTrackPoint::StRpsTrackPointQuality StUPCRpsTrackPoint::quality() const { return mQuality; }
+inline double StUPCRpsTrackPoint::x() const { return mPosition.x(); }
+inline double StUPCRpsTrackPoint::y() const { return mPosition.y(); }
+inline double StUPCRpsTrackPoint::z() const { return mPosition.z(); }
 
-inline void StRpsTrackPoint::setPosition(const TVector3& position)
+inline void StUPCRpsTrackPoint::setPosition(const TVector3& position)
 {
     mPosition = position;
 }
-inline void StRpsTrackPoint::setRpId(int rpId) { mRpId = rpId; }
-inline void StRpsTrackPoint::setClusterId(int clusterId, unsigned int planeId)
+inline void StUPCRpsTrackPoint::setRpId(int rpId) { mRpId = rpId; }
+inline void StUPCRpsTrackPoint::setClusterId(int clusterId, unsigned int planeId)
 {
     if( planeId<mNumberOfPlanesInRp )
         mClusterId[planeId] = clusterId;
 }
-inline void StRpsTrackPoint::setTime(double timeVal, unsigned int pmtId)
+inline void StUPCRpsTrackPoint::setTime(double timeVal, unsigned int pmtId)
 {
     if( pmtId<mNumberOfPmtsInRp ) mTime[pmtId] = timeVal;
 }
-inline void StRpsTrackPoint::setQuality(StRpsTrackPoint::StRpsTrackPointQuality quality )
+inline void StUPCRpsTrackPoint::setQuality(StUPCRpsTrackPoint::StRpsTrackPointQuality quality )
 {
     mQuality = quality;
 }

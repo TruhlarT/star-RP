@@ -1,6 +1,6 @@
 /***************************************************************************
  *
- * $Id: StRpsCluster.cxx,v 2.2 2015/10/02 19:50:09 ullrich Exp $
+ * $Id: StUPCRpsCluster.cxx,v 2.2 2015/10/02 19:50:09 ullrich Exp $
  *
  * Author: Thomas Ullrich, Nov 2009
  ***************************************************************************
@@ -9,7 +9,7 @@
  *
  ***************************************************************************
  *
- * $Log: StRpsCluster.cxx,v $
+ * $Log: StUPCRpsCluster.cxx,v $
  * Revision 2.2  2015/10/02 19:50:09  ullrich
  * Added mPositionRMS and accessors.
  *
@@ -17,13 +17,13 @@
  * Initial Revision
  *
  **************************************************************************/
-#include "StRpsCluster.h"
+#include "StUPCRpsCluster.h"
 
-static const char rcsid[] = "$Id: StRpsCluster.cxx,v 2.2 2015/10/02 19:50:09 ullrich Exp $";
+static const char rcsid[] = "$Id: StUPCRpsCluster.cxx,v 2.2 2015/10/02 19:50:09 ullrich Exp $";
 
-ClassImp(StRpsCluster)
+ClassImp(StUPCRpsCluster)
 
-StRpsCluster::StRpsCluster()
+StUPCRpsCluster::StUPCRpsCluster()
 {
     mPosition = mEnergy = mXY = 0;
     mLength = 0;
@@ -31,7 +31,7 @@ StRpsCluster::StRpsCluster()
     mPlaneId = mRomanPotId = 0;
 }
 
-StRpsCluster::StRpsCluster(double pos, double posRMS, short len,
+StUPCRpsCluster::StUPCRpsCluster(double pos, double posRMS, short len,
                            double e, double xy, unsigned char qual)
 {
     mPosition = pos;
@@ -44,60 +44,60 @@ StRpsCluster::StRpsCluster(double pos, double posRMS, short len,
     // mPlaneId and mRomanPotId are later set by StRpsPlane::addCluster()
 }
 
-StRpsCluster::~StRpsCluster() { /* noop */ };
+StUPCRpsCluster::~StUPCRpsCluster() { /* noop */ };
 
 double 
-StRpsCluster::position() const { return mPosition; }
+StUPCRpsCluster::position() const { return mPosition; }
 
 double 
-StRpsCluster::positionRMS() const { return mPositionRMS; }
+StUPCRpsCluster::positionRMS() const { return mPositionRMS; }
 
 short  
-StRpsCluster::length() const { return mLength; }
+StUPCRpsCluster::length() const { return mLength; }
 
 double 
-StRpsCluster::energy() const { return mEnergy; }
+StUPCRpsCluster::energy() const { return mEnergy; }
 
 double 
-StRpsCluster::xy() const { return mXY; }
+StUPCRpsCluster::xy() const { return mXY; }
 
 unsigned char 
-StRpsCluster::quality() const { return mQuality; }
+StUPCRpsCluster::quality() const { return mQuality; }
 
 unsigned int 
-StRpsCluster::romanPotId() const { return mRomanPotId; }
+StUPCRpsCluster::romanPotId() const { return mRomanPotId; }
 
 unsigned int 
-StRpsCluster::planeId() const { return mPlaneId; }
+StUPCRpsCluster::planeId() const { return mPlaneId; }
 
 void 
-StRpsCluster::setPosition(double val) { mPosition = val; }
+StUPCRpsCluster::setPosition(double val) { mPosition = val; }
 
 void 
-StRpsCluster::setPositionRMS(double val) { mPositionRMS = val; }
+StUPCRpsCluster::setPositionRMS(double val) { mPositionRMS = val; }
 
 void 
-StRpsCluster::setLength(short val) { mLength = val; }
+StUPCRpsCluster::setLength(short val) { mLength = val; }
 
 void 
-StRpsCluster::setEnergy(double val) { mEnergy = val; }
+StUPCRpsCluster::setEnergy(double val) { mEnergy = val; }
 
 void 
-StRpsCluster::setXY(double val) { mXY = val; }
+StUPCRpsCluster::setXY(double val) { mXY = val; }
 
 void 
-StRpsCluster::setQuality(unsigned char val) { mQuality = val; }
+StUPCRpsCluster::setQuality(unsigned char val) { mQuality = val; }
 
 void 
-StRpsCluster::setPlaneId(unsigned char val) { mPlaneId = val; }
+StUPCRpsCluster::setPlaneId(unsigned char val) { mPlaneId = val; }
 
 void 
-StRpsCluster::setRomanPotId(unsigned char val) { mRomanPotId = val; }
+StUPCRpsCluster::setRomanPotId(unsigned char val) { mRomanPotId = val; }
 
 // 
 // Non class methods
 //
-ostream& operator<<(ostream& os, const StRpsCluster& cluster)
+ostream& operator<<(ostream& os, const StUPCRpsCluster& cluster)
 {
     os << "position = " << cluster.position() << std::endl; // os << "position = " << cluster.position() << endl;
     os << "position rms = " << cluster.positionRMS() << std::endl; // ...

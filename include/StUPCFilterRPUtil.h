@@ -6,6 +6,17 @@
 class StRPEvent;
 class StMuDst;
 
+/*
+class StUPCRpsCollection;
+class StMuRpsCollection;
+class StUPCRpsRomanPot; 
+class StUPCRpsPlane;
+class StUPCRpsCluster;
+class StMuRpsTrackPoint;
+class StUPCRpsTrackPoint;
+class StMuRpsTrack;
+class StUPCRpsTrack;
+*/
 class StUPCFilterRPUtil {
 
 public:
