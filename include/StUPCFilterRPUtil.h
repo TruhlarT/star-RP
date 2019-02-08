@@ -1,6 +1,11 @@
 #ifndef StUPCFilterRPUtil_h
 #define StUPCFilterRPUtil_h
 
+#include "StMaker.h"
+
+class StRPEvent;
+class StMuDst;
+
 class StUPCFilterRPUtil {
 
 public:

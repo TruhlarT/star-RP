@@ -5,17 +5,31 @@
 //    Author: Truhlar Tomas
 //
 //_____________________________________________________________________________
+//c++ headers
+#include "string.h"
+#include <vector>
+#include <map>
 
-
+//root headers
 #include "TObjArray.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TH1I.h"
+#include "TClonesArray.h"
+#include "TDatabasePDG.h"
+#include "TParticle.h"
+
+//StRoot headers
+#include "StMuDSTMaker/COMMON/StMuDst.h"
+#include "StMuDSTMaker/COMMON/StMuRpsCollection.h"
+#include "StMuDSTMaker/COMMON/StMuRpsTrackPoint.h"
+#include "StMuDSTMaker/COMMON/StMuRpsTrack.h"
+
 
 //local headers
 #include "StRPEvent.h"
-#include "StMuDst.h"
-#include "StMuRpsCollection.h"
-#include "StMuRpsTrackPoint.h"
-#include "StMuRpsTrack.h"
 #include "StUPCFilterRPUtil.h"
+
 
 //_____________________________________________________________________________
 StUPCFilterRPUtil::StUPCFilterRPUtil() {
