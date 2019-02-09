@@ -1,20 +1,22 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "G__star-RP.cxx"
-  "CMakeFiles/star-RP.dir/src/StRpsPreCollection.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StRpsPreTrack.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StRpsPreTrackPoint.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StRpsCluster.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StRpsCollection.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StRpsPlane.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StRpsRomanPot.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StRpsTrack.cxx.o"
-  "CMakeFiles/star-RP.dir/src/StRpsTrackPoint.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsPreCollection.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsPreTrack.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsPreTrackPoint.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsCluster.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsCollection.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsPlane.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsRomanPot.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsTrack.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCRpsTrackPoint.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StUPCFilterRPUtil.cxx.o"
+  "CMakeFiles/star-RP.dir/src/StRPEvent.cxx.o"
   "CMakeFiles/star-RP.dir/G__star-RP.cxx.o"
   "libstar-RP.pdb"
   "libstar-RP.so"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/star-RP.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/star-RP.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

@@ -4,6 +4,9 @@
 #include "TObject.h"
 #include "TVector3.h"
 
+// #include "StEvent/StUPCRpsTrackPoint.h"
+
+class StUPCRpsTrackPoint;
 
 class StUPCRpsPreTrackPoint : public TObject {
 

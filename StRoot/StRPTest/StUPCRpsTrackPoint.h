@@ -50,7 +50,7 @@ public:
     void setRpId(int);
     void setClusterId(int, unsigned int);
     void setTime(double, unsigned int);
-    void setQuality(StRpsTrackPointQuality quality);
+    void setQuality(StRpsTrackPointQuality);
 
     enum {mNumberOfPmtsInRp = 2, mNumberOfPlanesInRp = 4};
     
@@ -94,7 +94,7 @@ inline void StUPCRpsTrackPoint::setTime(double timeVal, unsigned int pmtId)
 {
     if( pmtId<mNumberOfPmtsInRp ) mTime[pmtId] = timeVal;
 }
-inline void StUPCRpsTrackPoint::setQuality(StRpsTrackPointQuality quality )
+inline void StUPCRpsTrackPoint::setQuality(StUPCRpsTrackPoint::StRpsTrackPointQuality quality )
 {
     mQuality = quality;
 }

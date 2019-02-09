@@ -8,7 +8,8 @@
 
 using namespace std;
 
-class StUPCRpsPreTrackPoint;
+class StUPCRpsTrackPoint;
+class StUPCRpsTrack;
 
 class StUPCRpsPreTrack : public TObject {
 public:

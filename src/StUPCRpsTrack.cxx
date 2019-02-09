@@ -23,8 +23,8 @@
  * Initial Revision.
  *
  ***************************************************************************/
-#include "StUPCRpsTrack.h"
 #include "StUPCRpsTrackPoint.h"
+#include "StUPCRpsTrack.h"
 #include <cmath>
 
 ClassImp(StUPCRpsTrack)

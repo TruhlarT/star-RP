@@ -28,8 +28,8 @@ public:
 
 private:
 
-  StUPCFilterRPUtil(const StUPCFilterRPUtil &o); // not implemented
-  StUPCFilterRPUtil &operator=(const StUPCFilterRPUtil &o); // not implemented
+ // StUPCFilterRPUtil(const StUPCFilterRPUtil &o); // not implemented
+ // StUPCFilterRPUtil &operator=(const StUPCFilterRPUtil &o); // not implemented
 
 };
 

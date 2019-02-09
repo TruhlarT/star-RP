@@ -1,6 +1,9 @@
 #include "StUPCRpsPreTrackPoint.h"
 #include "StUPCRpsPreTrack.h"
 
+#include "StUPCRpsTrackPoint.h"
+#include "StUPCRpsTrack.h"
+
 #include <cmath>
 
 ClassImp(StUPCRpsPreTrack)

@@ -25,14 +25,12 @@
 
 #include "TObject.h" // "StObject.h"
 #include "TClonesArray.h" // "StContainers.h"
-#include <vector> // added
 #include "StUPCRpsRomanPot.h"
+#include "StUPCRpsTrackPoint.h"
+#include "StUPCRpsTrack.h"
+#include <vector> // added
 
 using namespace std; // added
-
-class StUPCRpsCluster;
-class StUPCRpsTrackPoint;
-class StUPCRpsTrack;
 
 class StUPCRpsCollection : public TObject {
 public:

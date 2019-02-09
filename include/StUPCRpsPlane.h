@@ -24,7 +24,7 @@
 using namespace std; // added
 
 class StUPCRpsCluster;
-class StUPCRpsCollection;
+class StUPCRpsRomanPot;
 
 class StUPCRpsPlane : public TObject {
 public:

@@ -16,8 +16,8 @@
 #pragma link C++ class StUPCRpsCluster+;
 #pragma link C++ class StUPCRpsTrack+;
 #pragma link C++ class StUPCRpsTrackPoint+;
-#pragma link C++ class StRPEvent+;
-#pragma link C++ class StUPCFilterRPUtil+;
+#pragma link C++ class StRPEvent;
+#pragma link C++ class StUPCFilterRPUtil;
 
 
 

@@ -1,7 +1,8 @@
 #include "StUPCRpsPreCollection.h"
 #include "StUPCRpsCollection.h"
-#include "StUPCRpsPreTrackPoint.h"
-#include "StUPCRpsPreTrack.h"
+#include "StUPCRpsRomanPot.h"
+#include "StUPCRpsPlane.h"
+#include "StUPCRpsCluster.h"
 #include <algorithm>
 
 

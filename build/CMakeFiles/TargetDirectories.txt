@@ -1,3 +1,1 @@
-/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles/rebuild_cache.dir
-/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles/edit_cache.dir
-/home/truhlar/Desktop/STAR/VU/star-RP/build/CMakeFiles/star-RP.dir
+/star/u/truhlar/star-RP/build/CMakeFiles/star-RP.dir

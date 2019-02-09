@@ -22,10 +22,6 @@
  **************************************************************************/
 #include "StUPCRpsCollection.h"
 #include "StUPCRpsPlane.h"
-#include "StUPCRpsTrackPoint.h"
-#include "StUPCRpsCluster.h"
-#include "StUPCRpsTrack.h"
-
 #include <vector> // added
 
 static const char rcsid[] = "$Id: StUPCRpsCollection.cxx,v 2.3 2015/10/02 19:50:50 ullrich Exp $";
