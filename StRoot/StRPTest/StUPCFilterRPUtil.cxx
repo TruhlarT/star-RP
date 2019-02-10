@@ -41,8 +41,6 @@ StUPCFilterRPUtil::StUPCFilterRPUtil() {
 //_____________________________________________________________________________
 void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
 //_________________MY Part_______________________________//
-// I will nou use Prethinks? 
-
 
 
   StMuRpsCollection *collection = mMuDst->RpsCollection();
@@ -81,7 +79,8 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
       rpTrackPoint->setPosition(trackPoint->positionVec());
       rpTrackPoint->setRpId(trackPoint->rpId());
       rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId);
-     // rpTrackPoint->setTime(trackPoint->time(1), 1); // trackPoint->time(pmtId) = co je pmtID????
+      rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
+      rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
      // rpTrackPoint->setQuality(trackPoint->quality()); // problem enum ma ruzny jmena
 
       rpCollection->addTrackPoint(rpTrackPoint); 
@@ -98,7 +97,8 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
      // rpTrackPoint->setPosition(trackPoint->positionVec());
      // rpTrackPoint->setRpId(trackPoint->rpId());
      // rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId); // Problem nemam iPlaneId
-     // rpTrackPoint->setTime(trackPoint->time(), 1); // (double timeVal, unsigned int pmtId)
+     // rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
+     // rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
      // rpTrackPoint->setQuality(trackPoint->quality());
 
      // rpTrack->setTrackPoint(rpTrackPoint, iTrackPoint);
@@ -111,28 +111,6 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
     rpCollection->addTrack(rpTrack); 
   }
 
-
-/*
-  StRpsPreCollection *rpPreCollection = rpEvt->addPreCollection(); 
-    rpPreCollection->setPosition(const TVector3&);
-    rpPreCollection->setRpId(int);
-    rpPreCollection->setClusterId(int, unsigned int);
-    rpPreCollection->setTime(double, unsigned int);
-    rpPreCollection->setQuality(StRpsTrackPointQuality);
-
-  StRpsPreTrack *rpPreTrack  = rpEvt->addPreTrack(); 
-    rpPreTrack->setTrackPoint( StRpsPreTrackPoint*, unsigned int);
-    rpPreTrack->setP(const TVector3&);
-    rpPreTrack->setBranc// in muDsth(int);
-    rpPreTrack->setType(StRpsPreTrackType type);
-
-  StRpsPreTrackPoint *rpPreTrackPoint = rpEvt->addPreTrackPoint(); 
-    rpPreTrackPoint->setPosition(const TVector3&);
-    rpPreTrackPoint->setRpId(Int_t);
-    rpPreTrackPoint->setClusterId(Int_t, unsigned int);
-    rpPreTrackPoint->setQuality(StRpsPreTrackPointQuality quality);
-    rpPreTrackPoint->setTime(double, unsigned int);
-*/
 
 }//processEvent
 
