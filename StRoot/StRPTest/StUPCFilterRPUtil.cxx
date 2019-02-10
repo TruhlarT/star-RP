@@ -73,44 +73,40 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
         rpPlane->addCluster(rpCluster); 
       }
 
-    for(Int_t iTrackPoint=0; iTrackPoint < collection->numberOfTrackPoints(); ++iTrackPoint){ 
-      StMuRpsTrackPoint *trackPoint = collection->trackPoint(iTrackPoint);
-      StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
-      rpTrackPoint->setPosition(trackPoint->positionVec());
-      rpTrackPoint->setRpId(trackPoint->rpId());
-      rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId);
-      rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
-      rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
-     // rpTrackPoint->setQuality(trackPoint->quality()); // problem enum ma ruzny jmena
+      for(Int_t iTrack=0; iTrack < collection->numberOfTracks(); ++iTrack){
+        StMuRpsTrack *track = collection->track(iTrack);
+        StUPCRpsTrack *rpTrack = rpEvt->addTrack();
+        for(Int_t iTrackPoint=0; iTrackPoint < 2; ++iTrackPoint){
+          const StMuRpsTrackPoint *trackPoint = track->trackPoint(iTrackPoint); // invalid conversion from 'const StMuRpsTrackPoint*' to 'StMuRpsTrackPoint*'
+          StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
+          rpTrackPoint->setPosition(trackPoint->positionVec());
+          rpTrackPoint->setRpId(trackPoint->rpId());
+          rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId);
+          rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
+          rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
+         // rpTrackPoint->setQuality(trackPoint->quality());
+          rpTrack->setTrackPoint(rpTrackPoint, iTrackPoint);
+        }        
+        rpTrack->setP(track->pVec()); 
+        rpTrack->setBranch(track->branch()); 
+        //rpTrack->setType(track->type());  // problem enum ma ruzny jmena
+        rpCollection->addTrack(rpTrack); 
+      }
 
-      rpCollection->addTrackPoint(rpTrackPoint); 
-    }
+      for(Int_t iTrackPoint=0; iTrackPoint < collection->numberOfTrackPoints(); ++iTrackPoint){ 
+        StMuRpsTrackPoint *trackPoint = collection->trackPoint(iTrackPoint);
+        StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
+        rpTrackPoint->setPosition(trackPoint->positionVec());
+        rpTrackPoint->setRpId(trackPoint->rpId());
+        rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId);
+        rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
+        rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
+        //rpTrackPoint->setQuality(trackPoint->quality()); // problem enum ma ruzny jmena
+
+        rpCollection->addTrackPoint(rpTrackPoint); 
+      }
     }
   }
-
-  for(Int_t iTrack=0; iTrack < collection->numberOfTracks(); ++iTrack){
-    StMuRpsTrack *track = collection->track(iTrack);
-    StUPCRpsTrack *rpTrack = rpEvt->addTrack();
-    for(Int_t iTrackPoint=0; iTrackPoint < 2; ++iTrackPoint){
-   //   StMuRpsTrackPoint *trackPoint = track->trackPoint(iTrackPoint); // invalid conversion from 'const StMuRpsTrackPoint*' to 'StMuRpsTrackPoint*'
-     // StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
-     // rpTrackPoint->setPosition(trackPoint->positionVec());
-     // rpTrackPoint->setRpId(trackPoint->rpId());
-     // rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId); // Problem nemam iPlaneId
-     // rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
-     // rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
-     // rpTrackPoint->setQuality(trackPoint->quality());
-
-     // rpTrack->setTrackPoint(rpTrackPoint, iTrackPoint);
-    }
-    //rpTrack->setTrackPoint(track->trackPoint(0), 0); // first of mNumberOfStationsInBranch = 2
-    //rpTrack->setTrackPoint(track->trackPoint(1), 1); // second of mNumberOfStationsInBranch = 2
-    rpTrack->setP(track->pVec()); 
-    rpTrack->setBranch(track->branch()); 
-    //rpTrack->setType(track->type());  // problem enum ma ruzny jmena
-    rpCollection->addTrack(rpTrack); 
-  }
-
 
 }//processEvent
 
