@@ -33,13 +33,13 @@ public:
     ~StUPCRpsTrackPoint();
     
     StUPCRpsTrackPoint& operator=(const StUPCRpsTrackPoint&);
-    enum StRpsTrackPointQuality {rpsNormal, rpsGolden, rpsNotSet};
+    enum StUPCRpsTrackPointQuality {rpsNormal, rpsGolden, rpsNotSet}; // add = 0?
     
     TVector3 positionVec() const;
     int rpId() const;
     int clusterId(unsigned int) const;
     double time(unsigned int) const;
-    StRpsTrackPointQuality quality() const;
+    StUPCRpsTrackPointQuality quality() const;
     unsigned int planesUsed() const;
     
     double x() const;
@@ -50,7 +50,7 @@ public:
     void setRpId(int);
     void setClusterId(int, unsigned int);
     void setTime(double, unsigned int);
-    void setQuality(StRpsTrackPointQuality);
+    void setQuality(StUPCRpsTrackPointQuality);
 
     enum {mNumberOfPmtsInRp = 2, mNumberOfPlanesInRp = 4};
     
@@ -60,7 +60,7 @@ private:
     double mTime[mNumberOfPmtsInRp];
 
     TVector3         mPosition;
-    StRpsTrackPointQuality mQuality;
+    StUPCRpsTrackPointQuality mQuality;
 
     ClassDef( StUPCRpsTrackPoint, 1 )
 };
@@ -75,7 +75,7 @@ inline double StUPCRpsTrackPoint::time(unsigned int pmtId) const
 {
     return pmtId<mNumberOfPmtsInRp ? mTime[pmtId] : -1;
 }
-inline StUPCRpsTrackPoint::StRpsTrackPointQuality StUPCRpsTrackPoint::quality() const { return mQuality; }
+inline StUPCRpsTrackPoint::StUPCRpsTrackPointQuality StUPCRpsTrackPoint::quality() const { return mQuality; }
 inline double StUPCRpsTrackPoint::x() const { return mPosition.x(); }
 inline double StUPCRpsTrackPoint::y() const { return mPosition.y(); }
 inline double StUPCRpsTrackPoint::z() const { return mPosition.z(); }
@@ -94,7 +94,7 @@ inline void StUPCRpsTrackPoint::setTime(double timeVal, unsigned int pmtId)
 {
     if( pmtId<mNumberOfPmtsInRp ) mTime[pmtId] = timeVal;
 }
-inline void StUPCRpsTrackPoint::setQuality(StUPCRpsTrackPoint::StRpsTrackPointQuality quality )
+inline void StUPCRpsTrackPoint::setQuality(StUPCRpsTrackPointQuality quality )
 {
     mQuality = quality;
 }

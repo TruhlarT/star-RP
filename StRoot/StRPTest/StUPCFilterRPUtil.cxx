@@ -74,23 +74,37 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
       }
 
       for(Int_t iTrack=0; iTrack < collection->numberOfTracks(); ++iTrack){
-        StMuRpsTrack *track = collection->track(iTrack);
-        StUPCRpsTrack *rpTrack = rpEvt->addTrack();
-        for(Int_t iTrackPoint=0; iTrackPoint < 2; ++iTrackPoint){
-          const StMuRpsTrackPoint *trackPoint = track->trackPoint(iTrackPoint); // invalid conversion from 'const StMuRpsTrackPoint*' to 'StMuRpsTrackPoint*'
-          StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
-          rpTrackPoint->setPosition(trackPoint->positionVec());
-          rpTrackPoint->setRpId(trackPoint->rpId());
-          rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId);
-          rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
-          rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
-         // rpTrackPoint->setQuality(trackPoint->quality());
-          rpTrack->setTrackPoint(rpTrackPoint, iTrackPoint);
-        }        
-        rpTrack->setP(track->pVec()); 
-        rpTrack->setBranch(track->branch()); 
-        //rpTrack->setType(track->type());  // problem enum ma ruzny jmena
-        rpCollection->addTrack(rpTrack); 
+			StMuRpsTrack *track = collection->track(iTrack);
+			StUPCRpsTrack *rpTrack = rpEvt->addTrack();
+			for(Int_t iTrackPoint=0; iTrackPoint < 2; ++iTrackPoint){
+				const StMuRpsTrackPoint *trackPoint = track->trackPoint(iTrackPoint); // invalid conversion from 'const StMuRpsTrackPoint*' to 'StMuRpsTrackPoint*'
+				StUPCRpsTrackPoint *rpTrackPoint = rpEvt->addTrackPoint();
+				rpTrackPoint->setPosition(trackPoint->positionVec());
+				rpTrackPoint->setRpId(trackPoint->rpId());
+				rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId);
+				rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
+				rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
+				switch(trackPoint->quality()){
+					case StMuRpsTrackPoint::rpsNormal: rpTrackPoint->setQuality(StUPCRpsTrackPoint::rpsNormal);
+					break;      
+					case StMuRpsTrackPoint::rpsGolden: rpTrackPoint->setQuality(StUPCRpsTrackPoint::rpsGolden);
+					break; 
+					default: rpTrackPoint->setQuality(StUPCRpsTrackPoint::rpsNotSet);
+					break; 
+				}
+				rpTrack->setTrackPoint(rpTrackPoint, iTrackPoint);
+			}        
+			rpTrack->setP(track->pVec()); 
+			rpTrack->setBranch(track->branch());
+ 			switch(track->type()){
+				case StMuRpsTrack::rpsLocal: rpTrack->setType(StUPCRpsTrack::rpsLocal);
+				break;      
+				case StMuRpsTrack::rpsGlobal: rpTrack->setType(StUPCRpsTrack::rpsGlobal);
+				break; 
+				default: rpTrack->setType(StUPCRpsTrack::rpsUndefined);
+				break; 
+			}
+			rpCollection->addTrack(rpTrack); 
       }
 
       for(Int_t iTrackPoint=0; iTrackPoint < collection->numberOfTrackPoints(); ++iTrackPoint){ 
@@ -101,7 +115,14 @@ void StUPCFilterRPUtil::processEvent(StRPEvent *rpEvt, StMuDst *mMuDst) {
         rpTrackPoint->setClusterId(trackPoint->clusterId(iPlaneId), iPlaneId);
         rpTrackPoint->setTime(trackPoint->time(0), 0); // pmtId = 0
         rpTrackPoint->setTime(trackPoint->time(1), 1); // pmtId = 1
-        //rpTrackPoint->setQuality(trackPoint->quality()); // problem enum ma ruzny jmena
+			switch(trackPoint->quality()){
+				case StMuRpsTrackPoint::rpsNormal: rpTrackPoint->setQuality(StUPCRpsTrackPoint::rpsNormal);
+				break;      
+				case StMuRpsTrackPoint::rpsGolden: rpTrackPoint->setQuality(StUPCRpsTrackPoint::rpsGolden);
+				break; 
+				default: rpTrackPoint->setQuality(StUPCRpsTrackPoint::rpsNotSet);
+				break; 
+			}
 
         rpCollection->addTrackPoint(rpTrackPoint); 
       }
